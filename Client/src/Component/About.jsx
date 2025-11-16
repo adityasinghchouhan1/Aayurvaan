@@ -2,9 +2,18 @@ import React from 'react'
 import Heading from '../Reuse/Heading'
 import Aboutimg from '../../public/GA.jpg'
 import About2 from './About2'
+import Wrapper from '../UI/Wrapper'
+import Logo from '../../public/logo-img.png'
 const About = () => {
   return (
-    <>
+    <div>
+      <Wrapper
+        title={'About'}
+        description={
+          '**AAyurvaan** is a premier holistic health sanctuary designed to restore the natural harmony of your mind'
+        }
+        image={Logo}
+      />
       <div className="flex justify-content-center items-center flex-col">
         <Heading
           title={'Know Abouts Us'}
@@ -56,7 +65,7 @@ const About = () => {
       </div>
 
       <About2 />
-    </>
+    </div>
   )
 }
 
