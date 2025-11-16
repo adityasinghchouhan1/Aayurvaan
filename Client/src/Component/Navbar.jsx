@@ -32,6 +32,7 @@ const Navbar = () => {
             { name: 'Home', path: '' },
             { name: 'About', path: 'About' },
             { name: 'Therapy', path: 'Services' },
+            { name: 'Fasting Therapy', path: 'FastingTherapy' },
             { name: 'Treatments', path: 'Treatments' },
             { name: 'Contact', path: 'Contact' },
           ].map((item) => (

@@ -26,6 +26,7 @@ const Footer = () => {
               { name: 'About', path: '/About' },
               { name: 'Services', path: '/Services' },
               { name: 'Treatment', path: '/Treatment' },
+              { name: 'Fasting Therapy', path: '/FastingTherapy' },
               { name: 'Therapy', path: '/Therapy' },
               { name: 'Vision & Mission', path: '/Vision' },
               { name: 'Contact', path: '/Contect' },
