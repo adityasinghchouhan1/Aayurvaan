@@ -1,4 +1,6 @@
 import React from 'react'
+import logo from '../../../public/logo-img.png'
+import { Link } from 'react-router-dom'
 import {
   FaFacebookF,
   FaTwitter,
@@ -9,53 +11,71 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="flex justify-between items-center sm:flex-row flex-col gap-5 shadow-[0_0_20px_4px_rgba(246,79,49,1)] p-5 px-8 bg-black text-white">
-        {/* Left Section */}
-        <div className="flex flex-col max-w-sm text-center sm:text-left">
-          <h1 className="text-base font-bold mb-2">ABCDEF Website</h1>
-          <p className="text-xs text-gray-400 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
+      <div className="bg-[#0b223d] px-6 pt-8 w-full flex flex-col justify-center items-center text-white font-Roboto">
+        <div className="flex flex-col sm:flex-row justify-around items-center w-full gap-7 sm:gap-0">
+          {/* Address */}
+          <div className="flex flex-col justify-start text-start items-center sm:items-start text-lg font-bold">
+            <p> Address :-123 dfg ghjhij hgfty</p>
+            <p>State :- mp hhjiu</p>
+            <p>2345678</p>
+          </div>
+
+          {/* Navigation Links with Green Underline Hover */}
+          <div className="flex flex-col justify-start text-start items-start text-lg font-bold space-y-1">
+            {[
+              { name: 'About', path: '/About' },
+              { name: 'Services', path: '/Services' },
+              { name: 'Treatment', path: '/Treatment' },
+              { name: 'Therapy', path: '/Therapy' },
+              { name: 'Vision & Mission', path: '/Vision' },
+              { name: 'Contact', path: '/Contect' },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="
+                  relative w-fit 
+                  after:content-[''] after:absolute after:left-0 after:bottom-0 
+                  after:h-[2px] after:w-0 after:bg-green-500 
+                  after:transition-all after:duration-300 
+                  hover:after:w-full
+                "
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Social Media */}
+          <div className="flex flex-col justify-center items-center gap-4">
+            <img
+              src={logo}
+              className="object-fit-cover bg-center bg-no-repeat w-36"
+            />
+            <div className="text-sm font-serif font-bold mb-2">
+              Our Social Media Handle
+            </div>
+
+            <div className="flex gap-5 text-xl">
+              <a href="#" className="hover:text-[#3b5998] transition-all">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="hover:text-[#1DA1F2] transition-all">
+                <FaTwitter />
+              </a>
+              <a href="#" className="hover:text-[#E1306C] transition-all">
+                <FaInstagram />
+              </a>
+              <a href="#" className="hover:text-[#0077B5] transition-all">
+                <FaLinkedinIn />
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Center Section */}
-        <div className="flex flex-col text-center sm:text-left">
-          <div className="text-sm mb-1">Contact Number: ##########</div>
-          <div className="text-sm">Email: ABCD78@gmail.com</div>
-        </div>
-
-        {/* Right Section */}
-        <div className="flex flex-col items-center sm:items-start text-white">
-          <div className="text-sm font-serif font-bold mb-2">
-            Our Social Media Handle
-          </div>
-          <div className="flex gap-3 text-xl">
-            <a
-              href="#"
-              className="hover:text-[#3b5998] transition-all duration-200"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="#"
-              className="hover:text-[#1DA1F2] transition-all duration-200"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="#"
-              className="hover:text-[#E1306C] transition-all duration-200"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="#"
-              className="hover:text-[#0077B5] transition-all duration-200"
-            >
-              <FaLinkedinIn />
-            </a>
-          </div>
+        {/* Bottom Bar */}
+        <div className="w-full m-5 flex justify-center items-center bg-white text-gray-500 py-2 rounded-sm border-x-4 border-green-600">
+          All Rights @EventManagment Pvt Lmt
         </div>
       </div>
     </>
