@@ -267,7 +267,7 @@ const Wrapper = ({ title, description, image }) => {
       const size = isMobile ? Math.random() * 25 + 20 : Math.random() * 40 + 35
 
       // Leaves spawn randomly in bottom-left zone
-      const initialTop = Math.random() * 20 + 40 // 60–90% from top
+      const initialTop = Math.random() * 20 + 25 // 60–90% from top
       const initialLeft = Math.random() * 15 - 15 // -15% to 0%
 
       leaves.push(
@@ -290,7 +290,7 @@ const Wrapper = ({ title, description, image }) => {
   return (
     <section
       ref={wrapperRef}
-      className="bg-[#0c3f86] text-white overflow-hidden relative pt-14"
+      className="bg-[#0b223d] text-white overflow-hidden relative pt-14"
       data-theme="dark"
     >
       {/* Content */}
