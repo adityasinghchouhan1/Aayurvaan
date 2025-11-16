@@ -6,10 +6,6 @@
   background-color: rgba(19, 22, 89, 100);
 } */
 
-* {
-  background-color: rgba(0, 0, 0, 0.733);
-}
-
 .container {
   position: relative;
   height: 100vh;

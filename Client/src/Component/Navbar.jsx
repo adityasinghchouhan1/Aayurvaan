@@ -1,174 +1,99 @@
-import * as React from 'react'
-import PropTypes from 'prop-types'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import CssBaseline from '@mui/material/CssBaseline'
-import Divider from '@mui/material/Divider'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText'
-import MenuIcon from '@mui/icons-material/Menu'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Logo from '../../public/Gokulogo.png'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import logo from '../../public/logo-img.png'
+const Navbar = () => {
+  const [isOpen, setIsopen] = useState(false)
 
-const drawerWidth = 240
-const navItems = ['Home', 'About', 'contect']
-
-function DrawerAppBar(props) {
-  const { window } = props
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState)
+  const ToggleButton = () => {
+    setIsopen(!isOpen)
   }
 
-  const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: 'center', color: 'white' }}
-    >
-      <Typography
-        variant="h6"
-        sx={{
-          my: 2,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <img src={Logo} className="w-20 bg-cover" alt="Logo" />
-        ABC
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton
-              component={NavLink}
-              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-              sx={{
-                textAlign: 'center',
-                '&:hover': {
-                  boxShadow: '0 2px 0 white', // White bottom shadow on hover
-                },
-              }}
-            >
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined
-
+  const CloseButton = () => {
+    setIsopen(false)
+  }
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        component="nav"
-        position="fixed"
-        sx={{
-          backgroundColor: 'rgba(15, 15, 15, 0.6)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
-          boxShadow: '0 0px 5px rgba(246,79,49,1)',
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-
-          {/* Logo and name for small screens */}
-          <Box
-            sx={{
-              display: { xs: 'flex', sm: 'none' },
-              alignItems: 'center',
-              gap: 1,
-            }}
-          >
-            <img src={Logo} className="w-10 h-10 object-contain" alt="Logo" />
-            <Typography variant="h6" noWrap component="div">
-              ABC
-            </Typography>
-          </Box>
-
-          {/* Logo for medium and up */}
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            <img src={Logo} className="w-20 bg-cover" alt="Logo" />
-          </Typography>
-
-          {/* Desktop nav items */}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item}
-                component={NavLink}
-                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                sx={{
-                  color: '#fff',
-                  textDecoration: 'none',
-                  '&.active': {
-                    fontWeight: 'bold',
-                    borderBottom: '2px solid white',
-                  },
-                }}
-              >
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth,
-              height: '100vh', // Full height
-              backgroundColor: '#000',
-              color: '#fff',
-              borderRight: '2px solid white', // Right border
-            },
-          }}
+    <>
+      <nav className="fixed top-0 left-0 w-full z-20 flex justify-between items-center pr-2 py-3 bg-black/35  text-white">
+        <div className="bg-gradient-to-r rounded-sm  from-white  flex justify-center items-center">
+          <img
+            src={logo}
+            className="w-16 bg-center bg-no-repeat object-fit-cover bg-cover"
+          />
+          <h1 className="text-black font-Yellowtail text-3xl">Aayurvaan</h1>
+        </div>
+        <ul className="hidden md:flex gap-12 font-bold">
+          <li>
+            <NavLink to="" onClick={CloseButton}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="About" onClick={CloseButton}>
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="Services" onClick={CloseButton}>
+              Therapy
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="Treatments" onClick={CloseButton}>
+              Treatments
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="Contact" onClick={CloseButton}>
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+        <div
+          onClick={ToggleButton}
+          className="md:hidden text-2xl cursor-pointer"
         >
-          {drawer}
-        </Drawer>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </div>
+        <div
+          className={`md:hidden fixed z-[9999] top-0 left-0 text-white h-full bg-black/25 transition-all duration-300 overflow-hidden font-serif border-r-4 border-yellow-500 ${
+            isOpen ? 'w-56 backdrop-blur-sm' : 'w-0'
+          }`}
+        >
+          <ul className="flex flex-col justify-center items-center gap-8 text-xl pt-16 text-center">
+            <NavLink
+              className="hover:bg-slate-900 w-full py-2 transition-all duration-200"
+              to=""
+              onClick={CloseButton}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className="hover:bg-slate-900 w-full py-2 transition-all duration-200"
+              to="About"
+              onClick={CloseButton}
+            >
+              About
+            </NavLink>
+            <NavLink
+              className="hover:bg-slate-900 w-full py-2 transition-all duration-200"
+              to="Services"
+              onClick={CloseButton}
+            >
+              Services
+            </NavLink>
+            <NavLink
+              className="hover:bg-slate-900 w-full py-2 transition-all duration-200"
+              to="Contact"
+              onClick={CloseButton}
+            >
+              Contact
+            </NavLink>
+          </ul>
+        </div>
       </nav>
-    </Box>
+    </>
   )
 }
 
-DrawerAppBar.propTypes = {
-  window: PropTypes.func,
-}
-
-export default DrawerAppBar
+export default Navbar
