@@ -5,12 +5,14 @@ import Servises from './Servises'
 import WorkImg from './WorkImg'
 import VisionMission from './VisionMission/VisionMission'
 import Welcome from './Welcome/Welcome'
+import ServicesHome from './Services/ServicesHome'
 
 const Home = () => {
   return (
     <>
       <Slide />
       <Welcome />
+      <ServicesHome />
       <VisionMission />
       <Servises />
       <WorkImg />
