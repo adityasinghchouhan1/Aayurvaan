@@ -277,23 +277,23 @@ const ServicesHome = () => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center my-14">
-      {/* <Heading
+      <Heading
         title={'Services that You Want'}
         discrption={
           'Servises Lorem ipsum dolor sit amet consectetur adipisicing elit.Aperiam repellendus sequi maiores odio dicta voluptatum atque'
         }
-      /> */}
+      />
       <div className="flex flex-col gap-20 max-w-7xl">
         {services.map((srv, i) => (
           <div
             key={i}
             ref={(el) => (sectionsRef.current[i] = el)}
-            className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center"
+            className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center"
           >
             {/* LEFT */}
-            <div className="left text-left px-3">
-              <h3 className="font-semibold text-lg mb-2">{srv.listTitle}</h3>
-              <p className="text-gray-700">{srv.list.join(', ')}</p>
+            <div className="right sm:text-left text-center px-3">
+              <h2 className="text-2xl font-bold mb-2">{srv.title}</h2>
+              <p className="text-gray-700">{srv.description}</p>
             </div>
 
             {/* CENTER IMAGE */}
@@ -310,9 +310,9 @@ const ServicesHome = () => {
             </div>
 
             {/* RIGHT */}
-            <div className="right text-left px-3">
-              <h2 className="text-2xl font-bold mb-2">{srv.title}</h2>
-              <p className="text-gray-700">{srv.description}</p>
+            <div className="left sm:text-left text-center px-3">
+              <h3 className="font-semibold text-lg mb-2">{srv.listTitle}</h3>
+              <p className="text-gray-700">{srv.list.join(', ')}</p>
             </div>
           </div>
         ))}
