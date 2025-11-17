@@ -4,7 +4,12 @@ const VisionMission = () => {
   return (
     <div>
       <h2>Our Vision And Mission</h2>
-      <p></p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+        mollitia optio fuga tempora quos pariatur modi, ut fugiat. Dicta,
+        accusamus?
+      </p>
+      
     </div>
   )
 }
