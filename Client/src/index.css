@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  background-color: rgba(19, 22, 89, 100);
-} */
+:root {
+  background-color: #eaf0ea;
+}
 
 .container {
   position: relative;
