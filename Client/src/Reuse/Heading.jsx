@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const Heading = ({ title, textcolor, discrption }) => {
+const Heading = ({ title, discrption }) => {
   const headingRef = useRef(null)
 
   useEffect(() => {
@@ -32,15 +32,12 @@ const Heading = ({ title, textcolor, discrption }) => {
   return (
     <div
       ref={headingRef}
-      className="flex items-center justify-center flex-col mt-10 mb-10"
+      className="flex items-center justify-center flex-col mt-5 mb-10"
     >
-      <h1
-        style={{ color: textcolor }}
-        className="text-5xl font-semibold text-center"
-      >
+      <h1 className=" text-4xl sm:text-6xl font-bold text-center text-[#0b223d]">
         {title}
       </h1>
-      <p className="text-gray-500 font-serif text-center text-xs sm:w-[50%] w-[80%] mt-3">
+      <p className="text-gray-500 font-serif text-center sm:w-[50%] w-[80%] mt-3">
         {discrption}
       </p>
     </div>
