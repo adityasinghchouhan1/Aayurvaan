@@ -4,27 +4,26 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import gokuimg from '../../public/S2.jpg'
-import gokuimg2 from '../../public/S3.jpg'
+import gokuimg from '../../public/S0.webp'
+import gokuimg2 from '../../public/S00.jpeg'
 
 import gokuimg3 from '../../public/S.jpeg'
 
-import gokuimg4 from '../../public/S4.png'
+import gokuimg4 from '../../public/S000.jpg'
 
 // Slides with image, main text, and two lines of description
 const slides = [
-  {
-    img: gokuimg,
-    text: 'Unleash Your Inner Power',
-    line1:
-      'Discover the strength that lies within Push past your limits every single day.',
-  },
-
   {
     img: gokuimg2,
     text: 'Train Beyond Limits',
     line1:
       'Embrace the grind and level up your skills Every drop of sweat builds greatness.',
+  },
+  {
+    img: gokuimg,
+    text: 'Unleash Your Inner Power',
+    line1:
+      'Discover the strength that lies within Push past your limits every single day.',
   },
 
   {
