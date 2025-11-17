@@ -3,6 +3,9 @@ import Button from '../Reuse/Button'
 import Heading from '../Reuse/Heading'
 import axios from 'axios'
 import SummaryApi from '../common/SummaryApi'
+import Logo from '../../public/logo-img.png'
+
+import Wrapper from '../UI/Wrapper'
 const ContectUs = () => {
   const [formdata, setFormdata] = useState({
     name: '',
@@ -37,12 +40,12 @@ const ContectUs = () => {
 
   return (
     <div className="flex justify-center flex-col py-12">
+      <Wrapper title={'Contect Us'} description={'Fasting'} image={Logo} />{' '}
       <Heading
         title={'Contact Us'}
         discrption={'Fill out your query here and connect with us'}
         textcolor={'white'}
       />
-
       <div className="flex justify-center sm:items-start  sm:mx-80 mx-10 flex-col text-white p-5 gap-5">
         <label>Name</label>
         <input

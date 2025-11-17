@@ -31,6 +31,10 @@ const router = createBrowserRouter([
         path: 'FastingTherapy',
         element: <Fastingtherapy />,
       },
+      {
+        path: 'Contact',
+        element: <ContectUs />,
+      },
     ],
   },
 ])

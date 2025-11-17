@@ -131,7 +131,10 @@ const Wrapper = ({ title, description, image }) => {
       {/* Content */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 relative z-10">
         <div className="w-full lg:w-1/2 text-left">
-          <h1 ref={titleRef} className="text-6xl font-bold mb-4 leading-snug">
+          <h1
+            ref={titleRef}
+            className="text-4xl sm:text-6xl font-bold mb-2 leading-snug"
+          >
             {title}
           </h1>
           <p

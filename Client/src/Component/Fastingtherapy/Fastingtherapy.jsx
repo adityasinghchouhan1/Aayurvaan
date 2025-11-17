@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../../../public/logo-img.png'
+import Wrapper from '../../UI/Wrapper'
 
 const Fastingtherapy = () => {
   return (
