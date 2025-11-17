@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import logo from '../../public/wleaf.png'
 gsap.registerPlugin(ScrollTrigger)
 
 const Heading = ({ title, discrption }) => {
@@ -37,6 +37,7 @@ const Heading = ({ title, discrption }) => {
       <h1 className=" text-4xl sm:text-6xl font-bold text-center text-[#0b223d]">
         {title}
       </h1>
+      <img src={logo} alt="leaf" className="w-12 h-12 mt-2" />
       <p className="text-gray-500 font-serif text-center sm:w-[50%] w-[80%] mt-3">
         {discrption}
       </p>

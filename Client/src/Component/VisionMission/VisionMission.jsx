@@ -1,6 +1,7 @@
 import React from 'react'
 import YogaGirl from '../../../public/woman-practicing-yoga-outdoors-in-park-2025-03-08-04-32-56-utc-683x1024.jpg'
 import Heading from '../../Reuse/Heading'
+import ld from '../../../public/Ld3.png'
 const VisionMission = () => {
   return (
     <div className="flex flex-col md:flex-row sm:px-10  justify-center items-center">
@@ -14,9 +15,12 @@ const VisionMission = () => {
         />
         <div className="flex gap-10 flex-col md:flex-row">
           <div className="p-4 border-b-2 border-green-500">
-            <h2 className="font-bold text-2xl text-[#0b223d] mb-4">
-              Our Vision
-            </h2>
+            <div className="flex items-center justify-center">
+              <h2 className="font-bold text-2xl text-[#0b223d] mb-4">
+                Our Vision
+              </h2>
+              <img src={ld} className="h-12 w-12 mb-5" />
+            </div>
             <p className="text-gray-700 font-serif text-justify">
               To promote drug-free healing through nature cure and yoga,
               empowering individuals to embrace holistic health and well-being
@@ -24,9 +28,12 @@ const VisionMission = () => {
             </p>
           </div>
           <div className="p-4 border-b-2 border-green-500">
-            <h2 className="font-bold text-2xl text-[#0b223d] mb-4">
-              Our Mission
-            </h2>
+            <div className="flex items-center justify-center">
+              <h2 className="font-bold text-2xl text-[#0b223d] mb-4">
+                Our Mission
+              </h2>
+              <img src={ld} className="h-12 w-12 mb-5" />
+            </div>
             <p className="text-gray-700 font-serif sm:pe-10 pe-2 text-justify">
               At Aayurvaan, we strive to create a healthy, disease-free society
               by promoting drug-free therapies. Through awareness and holistic

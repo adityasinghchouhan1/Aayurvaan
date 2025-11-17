@@ -54,7 +54,7 @@ export default function ImageSlider() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="w-full h-[50vh]  bg-center bg-cover flex flex-col items-center justify-center text-white text-center px-4"
+              className="w-full h-[50vh] sm:h-[90vh] bg-center bg-cover flex flex-col items-center justify-center text-white text-center px-4"
               style={{ backgroundImage: `url(${slide.img})` }}
             >
               <div className=" absolute bottom-32 sm:left-8 left-0  flex flex-col justify-start items-start p-5">
