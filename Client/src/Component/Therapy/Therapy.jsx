@@ -1,7 +1,19 @@
 import React from 'react'
+import Wrapper from '../../UI/Wrapper'
+import Logo from '../../../public/logo-img.png'
 
 const Therapy = () => {
-  return <div>Therapy</div>
+  return (
+    <div>
+      <Wrapper
+        title={'Therapy'}
+        description={
+          'Naturopathy teaches that the cure for every disease lies hidden in the earth'
+        }
+        image={Logo}
+      />{' '}
+    </div>
+  )
 }
 
 export default Therapy

@@ -31,7 +31,7 @@ const Navbar = () => {
           {[
             { name: 'Home', path: '' },
             { name: 'About', path: 'About' },
-            { name: 'Therapy', path: 'Services' },
+            { name: 'Therapy', path: 'Therapy' },
             { name: 'Fasting Therapy', path: 'FastingTherapy' },
             { name: 'Treatments', path: 'Treatments' },
             { name: 'Contact', path: 'Contact' },
