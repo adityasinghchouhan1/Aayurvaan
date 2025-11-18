@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../../../public/logo-img.png'
 import Wrapper from '../../UI/Wrapper'
+import FTcontent from './FTcontent'
 
 const Fastingtherapy = () => {
   return (
@@ -12,6 +13,7 @@ const Fastingtherapy = () => {
         }
         image={Logo}
       />
+      <FTcontent />
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DecoImg from '../../public/580b585b2edbce24c47b26d3.png'
-import Star from '../../public/wleaf.png'
+import Bg from '../../public/S00.jpeg'
 
 gsap.registerPlugin(ScrollTrigger)
 const Wrapper = ({ title, description, image }) => {
@@ -124,10 +124,11 @@ const Wrapper = ({ title, description, image }) => {
   return (
     <section
       ref={wrapperRef}
-      className="bg-gradient-to-t from-[#008000]  text-white overflow-hidden relative pt-6"
+      className="  text-white overflow-hidden relative pt-6"
       data-theme="dark"
+      style={{ backgroundImage: `url(${Bg})` }}
     >
-      <img src={DecoImg} className="absolute z-0 w-96" />
+      {/* <img src={DecoImg} className="absolute z-0 w-96" /> */}
       {/* Content */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 relative z-10">
         <div className="w-full lg:w-1/2 text-left">

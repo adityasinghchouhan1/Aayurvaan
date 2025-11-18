@@ -6,7 +6,6 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import gokuimg from '../../public/S0.webp'
 import gokuimg2 from '../../public/S00.jpeg'
-
 import gokuimg3 from '../../public/S.jpeg'
 
 import gokuimg4 from '../../public/S000.jpg'
