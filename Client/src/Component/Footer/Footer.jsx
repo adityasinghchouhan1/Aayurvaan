@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-around items-center w-full gap-7 sm:gap-0">
           {/* Address */}
           <div className="flex flex-col justify-start text-start items-center sm:items-start text-lg font-bold z-10">
-            <p> Address :-123 dfg ghjhij hgftykjendjnewcfij</p>
+            <p> Address :-123 dfg ghjhij hgfty</p>
             <p>State :- mp hhjiu</p>
             <p>2345678</p>
           </div>
