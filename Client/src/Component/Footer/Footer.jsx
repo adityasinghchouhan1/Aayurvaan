@@ -1,6 +1,8 @@
 import React from 'react'
 import logo from '../../../public/logo-img.png'
 import { Link } from 'react-router-dom'
+import SideL from '../../../public/Side1-removebg-preview.png'
+import SideR from '../../../public/Leaf-PNG-HD-Quality.png'
 import {
   FaFacebookF,
   FaTwitter,
@@ -11,10 +13,18 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="bg-[#0b223d] px-6 pt-8 w-full flex flex-col justify-center items-center text-white font-Roboto">
+      <div className="bg-[#0b223d] px-6 pt-8 w-full flex flex-col justify-center items-center text-white font-Roboto overflow-hidden relative">
+        <img
+          src={SideL}
+          className=" absolute z-0 left-0 sm:w-[300px] w-[150px] top-0"
+        />
+        <img
+          src={SideR}
+          className=" absolute z-0 right-0 sm:w-[500px] w-[370px] top-0"
+        />
         <div className="flex flex-col sm:flex-row justify-around items-center w-full gap-7 sm:gap-0">
           {/* Address */}
-          <div className="flex flex-col justify-start text-start items-center sm:items-start text-lg font-bold">
+          <div className="flex flex-col justify-start text-start items-center sm:items-start text-lg font-bold z-10">
             <p> Address :-123 dfg ghjhij hgfty</p>
             <p>State :- mp hhjiu</p>
             <p>2345678</p>
@@ -48,7 +58,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="flex flex-col justify-center items-center gap-4">
+          <div className="flex flex-col justify-center items-center gap-4 z-10">
             <img
               src={logo}
               className="object-fit-cover bg-center bg-no-repeat w-36"
