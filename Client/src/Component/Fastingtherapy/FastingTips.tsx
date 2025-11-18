@@ -60,7 +60,7 @@ const FastingTips = () => {
 
   return (
     <>
-      <div className="flex flex-col px-5 justify-center items-center my-10">
+      <div className="flex flex-col px-5 justify-center items-center my-10 overflow-hidden">
         {/* ⭐ Banner Section with GSAP */}
         <div
           ref={bannerRef}
