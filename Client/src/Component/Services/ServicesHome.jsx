@@ -280,7 +280,7 @@ const ServicesHome = () => {
       <Heading
         title={'Services that You Want'}
         discrption={
-          'Servises Lorem ipsum dolor sit amet consectetur adipisicing elit.Aperiam repellendus sequi maiores odio dicta voluptatum atque'
+          'A service is an intangible activity or benefit provided by one party to another that does not result in the transfer of ownership'
         }
       />
       <div className="flex flex-col gap-20 max-w-7xl">
