@@ -64,16 +64,17 @@ const Navbar = () => {
 
         {/* MOBILE SLIDE MENU */}
         <div
-          className={`md:hidden fixed z-[9999] top-0 left-0 text-[#0b223d] h-full bg-black/25 transition-all duration-300 overflow-hidden font-serif border-r-4 border-green-500 ${
+          className={`md:hidden fixed z-[9999] top-0 left-0 text-[#0b223d] h-full bg-white transition-all duration-300 overflow-hidden font-serif border-r-4 border-green-500 ${
             isOpen ? 'w-56 backdrop-blur-sm' : 'w-0'
           }`}
         >
-          <ul className="flex flex-col justify-center items-center gap-8 text-xl pt-16 text-center">
+          <ul className="flex flex-col justify-center items-center gap-8 text-xl pt-16 text-center ">
             {[
               { name: 'Home', path: '' },
               { name: 'About', path: 'About' },
-              { name: 'Therapy', path: 'Services' },
+              { name: 'Therapy', path: 'Therapy' },
               { name: 'Treatments', path: 'Treatments' },
+              { name: 'Fasting Therapy', path: 'FastingTherapy' },
               { name: 'Contact', path: 'Contact' },
             ].map((item) => (
               <NavLink
@@ -82,7 +83,7 @@ const Navbar = () => {
                 onClick={CloseButton}
                 className="
                   relative w-full py-2 
-                  transition-all duration-200 text-[#0b223d] text-center
+                  transition-all duration-200 font-semibold text-[#0b223d] text-center
                   hover:bg-black/40
                   after:content-[''] after:absolute after:left-1/2 after:-bottom-0
                   after:h-[2px] after:w-0 after:bg-green-500 
