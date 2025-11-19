@@ -14,8 +14,6 @@ const Home = () => {
       <Welcome />
       <ServicesHome />
       <VisionMission />
-      <Servises />
-      <WorkImg />
     </>
   )
 }
