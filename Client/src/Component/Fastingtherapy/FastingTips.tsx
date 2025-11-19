@@ -77,7 +77,7 @@ const FastingTips = () => {
           {/* Title */}
           <h3
             ref={titleRef}
-            className="relative text-4xl sm:text-6xl font-bold text-center text-white"
+            className="relative text-3xl sm:text-6xl font-bold text-center text-white"
           >
             Key Aspects of Fasting Therapy:
           </h3>
