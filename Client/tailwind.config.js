@@ -13,6 +13,13 @@ export default {
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'], // Add your font here
+        Yellowtail: ['Yellowtail', 'cursive'],
+        Yellowtail2: ['Yellowtail'],
+        CM: ['Cormorant Garamond', 'sans-serif'],
+        Roboto: ['Roboto Serif', 'serif'],
+      },
     },
   },
   plugins: [],
