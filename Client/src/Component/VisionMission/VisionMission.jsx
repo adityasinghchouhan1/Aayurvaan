@@ -4,7 +4,7 @@ import Heading from '../../Reuse/Heading'
 import ld from '../../../public/Ld3.png'
 const VisionMission = () => {
   return (
-    <div className="flex flex-col md:flex-row sm:px-10  justify-center items-center">
+    <div className="flex flex-col md:flex-row sm:px-10  justify-center items-center pb-10 sm:pb-0">
       <div className="flex flex-col items-center justify-center my-6 sm:my-20 px-5">
         <Heading
           title={'Our Vision And Mission'}

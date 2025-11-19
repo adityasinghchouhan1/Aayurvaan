@@ -257,7 +257,7 @@ const ServicesHome = () => {
               scale: 0.5,
               opacity: 0,
               rotate: -15,
-              duration: 0.9,
+              duration: 0.4,
               ease: 'back.out(1.7)',
             },
             '-=0.5'

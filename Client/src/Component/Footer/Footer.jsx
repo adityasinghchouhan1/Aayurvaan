@@ -24,14 +24,14 @@ const Footer = () => {
         />
         <div className="flex flex-col sm:flex-row justify-around items-center w-full gap-7 sm:gap-0">
           {/* Address */}
-          <div className="flex flex-col justify-start text-start items-center sm:items-start text-lg font-bold z-10">
+          <div className="flex flex-col justify-start text-start items-center sm:items-start text-lg font-bold z-10 mt-20">
             <p> Address :-123 dfg ghjhij hgfty</p>
             <p>State :- mp hhjiu</p>
             <p>2345678</p>
           </div>
 
           {/* Navigation Links with Green Underline Hover */}
-          <div className="flex flex-col justify-start text-start items-start text-lg font-bold space-y-1">
+          <div className="flex flex-col justify-start text-start items-center sm:items-start  text-lg font-bold space-y-1">
             {[
               { name: 'About', path: '/About' },
               { name: 'Services', path: '/Services' },
