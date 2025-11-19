@@ -38,7 +38,7 @@ const Heading = ({ title, discrption }) => {
         {title}
       </h1>
       <img src={logo} alt="leaf" className="w-12 h-12 mt-2" />
-      <p className="text-gray-500 font-Yellowtail2 text-center sm:w-[50%] w-[80%] mt-3">
+      <p className="text-gray-500 font-Yellowtail text-center sm:w-[50%] w-[80%] mt-3">
         {discrption}
       </p>
     </div>

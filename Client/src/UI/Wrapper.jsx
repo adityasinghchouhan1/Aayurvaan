@@ -140,7 +140,7 @@ const Wrapper = ({ title, description, image }) => {
           </h1>
           <p
             ref={descRef}
-            className="text-gray-100 text-lg font-semibold leading-relaxed mb-6"
+            className="text-gray-100 text-lg font-semibold leading-relaxed mb-6 font-Yellowtail"
           >
             {description}
           </p>

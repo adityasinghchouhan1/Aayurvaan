@@ -14,7 +14,7 @@ const About = () => {
         }
         image={Logo}
       />
-      <div className="flex justify-content-center items-center flex-col">
+      {/* <div className="flex justify-content-center items-center flex-col">
         <Heading
           title={'Know Abouts Us'}
           discrption={'Zoon Of Our Jurney'}
@@ -62,9 +62,9 @@ const About = () => {
             ut assumenda architecto odio ullam sed harum eligendi ex quae magni
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <About2 />
+      {/* <About2 /> */}
     </div>
   )
 }

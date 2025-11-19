@@ -56,7 +56,7 @@ export default function ImageSlider() {
               style={{ backgroundImage: `url(${slide.img})` }}
             >
               <div className=" absolute bottom-32 sm:left-8 left-0  flex flex-col justify-start items-start p-5">
-                <h1 className="text-4xl sm:text-6xl font-bold bg-transparent text-white">
+                <h1 className="text-4xl sm:text-6xl font-bold bg-transparent text-white uppercase">
                   {slide.text}
                 </h1>
                 <p className="mt-4 text-sm  font-medium bg-transparent text-gray-100">
