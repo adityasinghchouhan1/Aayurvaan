@@ -5,7 +5,6 @@ const ContectusControllerdata = async (req, res) => {
   const { name, mail, contact, message } = req.body
   try {
     const data = new contectus({ name, mail, contact, message })
-
     await data.save()
     res.status(200).json({ message: 'Message received' })
   } catch (err) {
@@ -25,7 +24,6 @@ const getContectusdata = async (req, res) => {
 const UpdateContectForm = async (req, res) => {
   const { id } = req.params
   const updatedData = req.body
-
   try {
     const updatedata = await contectus.findByIdAndUpdate(id, updatedData)
     if (!updatedata) {
