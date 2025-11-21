@@ -23,5 +23,4 @@ const ContectSchema = new mongoose.Schema(
 )
 
 const Contectus = mongoose.model('contectformData', ContectSchema)
-
 module.exports = Contectus
