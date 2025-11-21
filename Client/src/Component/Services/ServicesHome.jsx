@@ -276,7 +276,7 @@ const ServicesHome = () => {
   }, [])
 
   return (
-    <div className="w-full flex flex-col justify-center items-center my-14">
+    <div className="w-full flex flex-col justify-center items-center my-14 overflow-hidden">
       <Heading
         title={'Services that You Want'}
         discrption={
@@ -293,7 +293,7 @@ const ServicesHome = () => {
             {/* LEFT */}
             <div className="right sm:text-left text-center px-3">
               <h2 className="text-2xl font-bold mb-2">{srv.title}</h2>
-              <p className="text-gray-700">{srv.description}</p>
+              <p className="text-gray-700 text-justify">{srv.description}</p>
             </div>
 
             {/* CENTER IMAGE */}
