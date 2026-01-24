@@ -1,3 +1,5 @@
-from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+user = User.objects.get(username='Ayuvan')   # apna username daalo
+user.email = 'admin@gmail.com'
+user.save()
