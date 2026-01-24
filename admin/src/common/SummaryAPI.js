@@ -1,9 +1,12 @@
-const backendDomain = 'http://localhost:8008'
+const backendDomain = 'http://127.0.0.1:8000'
 // const backendDomain = 'https://animaweb-1.onrender.com'
 
 const SummaryApi = {
   // For Event
-
+  Login: {
+    url: `${backendDomain}/api/accounts/login/`,
+    method: 'post',
+  },
   contectusdata: {
     url: `${backendDomain}/api/getcontectusdata`,
     method: 'get',

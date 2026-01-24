@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import SummaryApi from '../common/SummaryAPI'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [data, setData] = useState({
+    username: '',
     email: '',
     password: '',
   })
@@ -23,18 +26,23 @@ const Login = () => {
     setShowPassword(!showPassword)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
 
-    // Hardcoded credentials
-    const hardcodedEmail = 'admin@gmail.com'
-    const hardcodedPassword = 'admin123'
+    try {
+      const res = await axios.post(SummaryApi.Login.url, data)
 
-    if (data.email === hardcodedEmail && data.password === hardcodedPassword) {
-      localStorage.setItem('token', 'hardcoded-token')
+      // JWT tokens
+      const { access, refresh } = res.data
+
+      // Save tokens
+      localStorage.setItem('accessToken', access)
+      localStorage.setItem('refreshToken', refresh)
+
       navigate('/dashboard')
-    } else {
+    } catch (err) {
+      console.log(err.response?.data)
       setError('Invalid email or password')
     }
   }
@@ -54,6 +62,18 @@ const Login = () => {
           )}
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
+              <label className="block text-sm font-medium mb-2">
+                UserName :
+              </label>
+              <input
+                type="username"
+                name="username"
+                placeholder="Enter your email"
+                value={data.username}
+                onChange={handleOnChange}
+                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-2"
+                required
+              />
               <label className="block text-sm font-medium mb-2">Email :</label>
               <input
                 type="email"
