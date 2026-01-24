@@ -9,7 +9,7 @@ import Wrapper from '../UI/Wrapper'
 const ContectUs = () => {
   const [formdata, setFormdata] = useState({
     name: '',
-    mail: '',
+    email: '',
     contact: '',
     message: '',
   })
@@ -60,7 +60,7 @@ const ContectUs = () => {
         <label>Email</label>
         <input
           type="email"
-          name="mail"
+          name="email"
           onChange={handledata}
           placeholder="Enter your email"
           value={formdata.mail}
@@ -83,7 +83,7 @@ const ContectUs = () => {
           onChange={handledata}
           placeholder="Enter your message"
           value={formdata.message}
-          className="text-white px-3 py-5 mb-5  rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
+          className="text-black px-3 py-5 mb-5  rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
         />
 
         {error && <p className="text-red-500">{error}</p>}
