@@ -25,3 +25,9 @@ class ContactListAPIView(ListAPIView):
   queryset=Contact.objects.all()
   serializer_class =ContactSerializer
   permission_classes=[IsAuthenticated]
+
+
+class ContactDetailAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated]  
