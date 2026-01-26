@@ -21,6 +21,12 @@ REST_FRAMEWORK = {
     ),
 }
 
+CORS_ALLOW_HEADERS = [
+    "authorization",
+    "content-type",
+]
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,6 +59,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',       # ✅ MUST BE FIRST
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,11 +67,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # CORS Middleware
-     'corsheaders.middleware.CorsMiddleware',
-    #  Security Middleware
-    'django.middleware.security.SecurityMiddleware',
 ]
+
+
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 
