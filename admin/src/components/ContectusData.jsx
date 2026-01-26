@@ -269,7 +269,7 @@ const ContectusData = () => {
 
   const handleDelete = async (id) => {
     try {
-      const resp = await axios.delete(`${SummaryApi.contectusdelete.url}/${id}`)
+      await axios.delete(`${SummaryApi.contectusdelete.url}/${id}`)
       alert('Deleted successfully')
       setData((prev) => prev.filter((item) => item._id !== id))
     } catch (err) {
