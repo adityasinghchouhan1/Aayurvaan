@@ -256,8 +256,14 @@ const ContectusData = () => {
 
   useEffect(() => {
     const fetchdata = async () => {
+      const token = localStorage.getItem('accessToken')
+
       try {
-        const res = await axios.get(SummaryApi.contectusdata.url)
+        const res = await axios.get(SummaryApi.contectusdata.url, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
         setData(res.data)
         console.log(res.data)
       } catch (err) {

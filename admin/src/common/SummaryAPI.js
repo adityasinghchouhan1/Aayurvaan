@@ -9,15 +9,12 @@ const SummaryApi = {
   },
   contectusdata: {
     url: `${backendDomain}/api/contacts/`,
-    method: 'get',
-  },
-  contectUpdate: {
-    url: `${backendDomain}/api/updatecontect`,
-    method: 'put',
   },
   contectusdelete: {
-    url: `${backendDomain}/api/deletecontect`,
-    method: 'delete',
+    url: `${backendDomain}/api/contacts/`,
+  },
+  contectUpdate: {
+    url: `${backendDomain}/api/contacts/`,
   },
   evenetCount: {
     url: `${backendDomain}/api/events`,
