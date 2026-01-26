@@ -8,7 +8,7 @@ const SummaryApi = {
     method: 'post',
   },
   contectusdata: {
-    url: `${backendDomain}/api/contacts`,
+    url: `${backendDomain}/api/contacts/`,
     method: 'get',
   },
   contectUpdate: {
