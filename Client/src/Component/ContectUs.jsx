@@ -3,7 +3,7 @@ import Button from '../Reuse/Button'
 import Heading from '../Reuse/Heading'
 import axios from 'axios'
 import SummaryApi from '../common/SummaryApi'
-import Logo from '../../public/logo-img.png'
+import Logo from '../../public/meditating.png'
 
 import Wrapper from '../UI/Wrapper'
 const ContectUs = () => {

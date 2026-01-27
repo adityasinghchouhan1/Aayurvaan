@@ -3,7 +3,7 @@ import Heading from '../Reuse/Heading'
 import Aboutimg from '../../public/GA.jpg'
 import About2 from './About2'
 import Wrapper from '../UI/Wrapper'
-import Logo from '../../public/logo-img.png'
+import Logo from '../../public/meditating.png'
 const About = () => {
   return (
     <div>
