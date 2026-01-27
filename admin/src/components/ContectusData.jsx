@@ -313,8 +313,8 @@ const ContectusData = () => {
       </h1>
       <tbody>
         {data?.map((entry) => (
-          <tr key={entry._id} className="hover:bg-gray-50">
-            {editRowId === entry._id ? (
+          <tr key={entry.id} className="hover:bg-gray-50">
+            {editRowId === entry.id ? (
               <>
                 <td className="border px-4 py-2">
                   <input
@@ -352,11 +352,11 @@ const ContectusData = () => {
                   />
                 </td>
                 <td className="border px-4 py-2">
-                  {new Date(entry.createdAt).toLocaleDateString()}{' '}
+                  {new Date(entry.created_at).toLocaleDateString()}
                 </td>
                 <td className="border px-4 py-2">
                   <button
-                    onClick={() => handleupadte(entry._id)}
+                    onClick={() => handleupadte(entry.id)}
                     className="bg-green-500 text-white rounded p-2 mr-2"
                   >
                     Save
@@ -388,7 +388,7 @@ const ContectusData = () => {
                     Edit
                   </button>
                   <button
-                    onClick={() => handleDelete(entry._id)}
+                    onClick={() => handleDelete(entry.id)}
                     className="bg-red-500 text-white rounded p-2"
                   >
                     Delete
