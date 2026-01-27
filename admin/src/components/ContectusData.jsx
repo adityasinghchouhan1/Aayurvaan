@@ -242,7 +242,7 @@ const ContectusData = () => {
     setEditFormData({
       name: entry.name,
       contact: entry.contact,
-      mail: entry.mail,
+      email: entry.email,
       message: entry.message,
     })
   }
@@ -338,8 +338,8 @@ const ContectusData = () => {
                   <input
                     className="w-full border px-2 py-1"
                     type="email"
-                    name="mail"
-                    value={editFormData.mail}
+                    name="email"
+                    value={editFormData.email}
                     onChange={handleEditChange}
                   />
                 </td>
@@ -373,12 +373,12 @@ const ContectusData = () => {
               <>
                 <td className="border px-4 py-2">{entry.name}</td>
                 <td className="border px-4 py-2">{entry.contact}</td>
-                <td className="border px-4 py-2">{entry.mail}</td>
+                <td className="border px-4 py-2">{entry.email}</td>
                 <td className="border px-4 py-2 whitespace-pre-wrap">
                   {entry.message}{' '}
                 </td>
                 <td className="border px-4 py-2">
-                  {new Date(entry.createdAt).toLocaleDateString()}{' '}
+                  {new Date(entry.created_at).toLocaleDateString()}{' '}
                 </td>
                 <td className="border px-4 py-2">
                   <button

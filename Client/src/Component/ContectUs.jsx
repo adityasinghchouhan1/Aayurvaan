@@ -28,7 +28,7 @@ const ContectUs = () => {
       console.log('POST request successful')
       if (res.status === 200) {
         setSuccess('Message sent successfully!')
-        setFormdata({ name: '', mail: '', contact: '', message: '' })
+        setFormdata({ name: '', email: '', contact: '', message: '' })
       } else {
         setError(data.message || 'Something went wrong')
       }
