@@ -47,47 +47,55 @@ const ContectUs = () => {
         textcolor={'white'}
       />
       <div className="flex justify-center sm:items-start  sm:mx-80 mx-10 flex-col text-white p-5 gap-5">
-        <label>Name</label>
+        <label className="text-[#0b223d] font-serif text-lg font-semibold">
+          Name
+        </label>
         <input
           type="text"
           name="name"
           onChange={handledata}
           placeholder="Enter your name"
           value={formdata.name}
-          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
+          className="text-[#0b223d] px-3 py-3 border-[#0b223d] border-b-2 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
         />
 
-        <label>Email</label>
+        <label className="text-[#0b223d] font-serif text-lg font-semibold">
+          Email
+        </label>
         <input
           type="email"
           name="email"
           onChange={handledata}
           placeholder="Enter your email"
-          value={formdata.mail}
-          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
+          value={formdata.email}
+          className="text-[#0b223d] px-3 py-3 border-[#0b223d] border-b-2 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
         />
 
-        <label>Contact Number</label>
+        <label className="text-[#0b223d] font-serif text-lg font-semibold">
+          Contact Number
+        </label>
         <input
           type="tel"
           name="contact"
           onChange={handledata}
           placeholder="Enter your contact number"
           value={formdata.contact}
-          className="text-white px-3 py-1 rounded w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
+          className="text-[#0b223d] px-3 py-3 rounded border-[#0b223d] border-b-2 w-full shadow-[0_0_20px_2px_rgba(255,255,255,0.5)]"
         />
 
-        <label>Message</label>
+        <label className="text-[#0b223d] font-serif text-lg font-semibold">
+          Message
+        </label>
         <textarea
           name="message"
           onChange={handledata}
           placeholder="Enter your message"
           value={formdata.message}
-          className="text-black px-3 py-5 mb-5  rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
+          className="text-black px-3 py-5 mb-5 border-[#0b223d] border-b-4  rounded w-full shadow-[0_0_20px_4px_rgba(255,255,255,0.5)]"
         />
 
-        {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-500">{success}</p>}
+        {error && <p className="text-red-600">{error}</p>}
+        {success && <p className="text-green-600">{success}</p>}
 
         <Button title="Contact Us" color="#ff5733" Onclick={handleSubmit} />
       </div>
