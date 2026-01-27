@@ -275,7 +275,7 @@ const ContectusData = () => {
   }, []) // Added dependency array
 
   const handleDelete = async (id) => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('accessToken')
 
     try {
       await axios.delete(`${SummaryApi.contectusdelete.url}${id}/`, {
@@ -291,7 +291,7 @@ const ContectusData = () => {
   }
 
   const handleupadte = async (id) => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('accessToken')
 
     try {
       await axios.put(`${SummaryApi.contectUpdate.url}${id}/`, editFormData, {
