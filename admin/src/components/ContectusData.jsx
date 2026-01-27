@@ -238,7 +238,7 @@ const ContectusData = () => {
   })
 
   const handleEditClick = (entry) => {
-    setEditRowId(entry._id)
+    setEditRowId(entry.id)
     setEditFormData({
       name: entry.name,
       contact: entry.contact,
@@ -246,6 +246,7 @@ const ContectusData = () => {
       message: entry.message,
     })
   }
+
   const handleEditChange = (e) => {
     const { name, value } = e.target
     setEditFormData((prev) => ({
@@ -274,18 +275,30 @@ const ContectusData = () => {
   }, []) // Added dependency array
 
   const handleDelete = async (id) => {
+    const token = localStorage.getItem('token')
+
     try {
-      await axios.delete(`${SummaryApi.contectusdelete.url}/${id}`)
-      alert('Deleted successfully')
-      setData((prev) => prev.filter((item) => item._id !== id))
+      await axios.delete(`${SummaryApi.contectusdelete.url}${id}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      setData((prev) => prev.filter((item) => item.id !== id))
     } catch (err) {
       console.error(err)
     }
   }
 
   const handleupadte = async (id) => {
+    const token = localStorage.getItem('token')
+
     try {
-      await axios.put(`${SummaryApi.contectUpdate.url}/${id}`, editFormData)
+      await axios.put(`${SummaryApi.contectUpdate.url}${id}/`, editFormData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       setEditRowId(null)
     } catch (err) {
       console.error(err)
