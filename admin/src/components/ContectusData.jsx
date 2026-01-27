@@ -294,11 +294,25 @@ const ContectusData = () => {
     const token = localStorage.getItem('accessToken')
 
     try {
-      await axios.put(`${SummaryApi.contectUpdate.url}${id}/`, editFormData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await axios.put(
+        `${SummaryApi.contectUpdate.url}${id}/`,
+        editFormData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      })
+      )
+
+      console.log('Update successful:', res.data)
+
+      // 🔥 UPDATE STATE HERE
+      setData((prev) =>
+        prev.map((item) =>
+          item.id === id ? { ...item, ...editFormData } : item,
+        ),
+      )
+
       setEditRowId(null)
     } catch (err) {
       console.error(err)
