@@ -1,6 +1,6 @@
 import React from 'react'
 import Wrapper from '../../UI/Wrapper'
-import Logo from '../../../public/logo-img.png'
+import Logo from '../../../public/meditating.png'
 
 const Therapy = () => {
   return (
