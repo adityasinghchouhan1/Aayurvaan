@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('contact.urls')),
     path('api/accounts/',include('accounts.urls')),
+    path('api/', include('slider.urls')),
+
 ]
 
 if settings.DEBUG:
