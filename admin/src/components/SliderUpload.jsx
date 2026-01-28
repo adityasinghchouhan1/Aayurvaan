@@ -71,7 +71,7 @@ const SliderUpload = () => {
     const token = localStorage.getItem('accessToken')
 
     try {
-      await axios.delete(`${SummaryApi.SliderDataDelete.url}/${id}`, {
+      await axios.delete(`${SummaryApi.SliderDataDelete.url}/${id}/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -79,7 +79,7 @@ const SliderUpload = () => {
       alert('Delete successful!')
 
       // Update local data state
-      setData((prev) => prev.filter((item) => item._id !== id))
+      setData((prev) => prev.filter((item) => item.id !== id))
     } catch (err) {
       console.error(err)
       alert('Delete failed')
@@ -87,7 +87,7 @@ const SliderUpload = () => {
   }
 
   const startEditing = (item) => {
-    setEditingId(item._id)
+    setEditingId(item.id)
     setEditFormData({
       image: null,
       Title: item.Title,
@@ -114,14 +114,17 @@ const SliderUpload = () => {
       }
       updateData.append('Title', editFormData.Title)
       updateData.append('description', editFormData.description)
+      const token = localStorage.getItem('accessToken')
 
-      await axios.put(`${SummaryApi.updateSliderData.url}/${id}`, updateData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      await axios.put(`${SummaryApi.updateSliderData.url}/${id}/`, updateData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
 
       setData((prev) =>
         prev.map((item) =>
-          item._id === id
+          item.id === id
             ? {
                 ...item,
                 Title: editFormData.Title,
@@ -211,18 +214,18 @@ const SliderUpload = () => {
             {data.length > 0 ? (
               data.map((item) => (
                 <tr
-                  key={item._id}
+                  key={item.id}
                   className="text-center border border-gray-300 hover:bg-indigo-50 transition"
                 >
                   <td className="border border-gray-300 p-3">
                     <img
-                      src={`${BASE_URL}/uploads/${item.image}`}
+                      src={item.image}
                       alt="Slider"
                       className="w-36 h-24 object-cover rounded-lg mx-auto"
                     />
                   </td>
 
-                  {editingId === item._id ? (
+                  {editingId === item.id ? (
                     <>
                       <td className="border border-gray-300 p-3">
                         <input
@@ -251,7 +254,7 @@ const SliderUpload = () => {
                       </td>
                       <td className="border border-gray-300 p-3 space-x-2">
                         <button
-                          onClick={() => handleSaveClick(item._id)}
+                          onClick={() => handleSaveClick(item.id)}
                           className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
                         >
                           Save
@@ -280,7 +283,7 @@ const SliderUpload = () => {
                           Edit
                         </button>
                         <button
-                          onClick={() => hsandleDelete(item._id)}
+                          onClick={() => hsandleDelete(item.id)}
                           className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded transition"
                         >
                           Delete

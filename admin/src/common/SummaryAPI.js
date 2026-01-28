@@ -41,23 +41,26 @@ const SummaryApi = {
   },
 
   // ----------------Slider--------------------------///////
-
   SliderDatapost: {
     url: `${backendDomain}/api/sliders/create/`,
     method: 'post',
   },
+
   SliderDataget: {
     url: `${backendDomain}/api/sliders/`,
     method: 'get',
   },
+
   SliderDataDelete: {
-    url: `${backendDomain}/api/sliders/<int:pk>/`,
+    url: `${backendDomain}/api/sliders`, // id will be appended
     method: 'delete',
   },
+
   updateSliderData: {
-    url: `${backendDomain}/api/sliders/<int:pk>/`,
+    url: `${backendDomain}/api/sliders`, // id will be appended
     method: 'put',
   },
+
   // Admin routes
   loginAdmin: {
     url: `${backendDomain}/api/loginAdmin`,
