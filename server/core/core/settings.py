@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
+
+
 
 # Rest Framework Imports
 
@@ -56,6 +59,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'accounts',
     'contact',
+     'slider',
+
 ]
 
 MIDDLEWARE = [
@@ -104,6 +109,9 @@ DATABASES = {
     }
 }
 
+# Media files (Uploaded by users)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
