@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import(
+from rest_framework.generics import(
   ListAPIView,
   CreateAPIView,
   RetrieveUpdateDestroyAPIView
@@ -11,7 +11,7 @@ from .serializers import SliderSerializer
 
 # 🔹 Client side – public sliders
 class SliderListView(ListAPIView):
-    queryset=Slider.objects.filter(is_active=True)
+    queryset = Slider.objects.all()
     serializer_class=SliderSerializer
     permission_classes=[AllowAny]
 

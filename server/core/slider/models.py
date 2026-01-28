@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Slider(models.Model):
-   title=models.CharField(max_length=200)
+   Title=models.CharField(max_length=200)
    image=models.ImageField(upload_to='sliders/')
    description=models.TextField(blank=True)
    is_active=models.BooleanField(default=True)
