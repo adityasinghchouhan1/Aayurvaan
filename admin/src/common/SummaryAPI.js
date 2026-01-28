@@ -24,38 +24,38 @@ const SummaryApi = {
   //------------------- For Uploadservices
 
   Uploadservices: {
-    url: `${backendDomain}/api/Servicesupload`,
+    url: `${backendDomain}/api/sliders/`,
     method: 'post',
   },
   Servisesget: {
-    url: `${backendDomain}/api/Servisesget`,
+    url: `${backendDomain}/api/sliders/`,
     method: 'get',
   },
   updateServices: {
-    url: `${backendDomain}/api/updateServices`,
+    url: `${backendDomain}/api/sliders/<int:pk>/`,
     method: 'put',
   },
   deleteServices: {
-    url: `${backendDomain}/api/deleteServices`,
+    url: `${backendDomain}/api/sliders/`,
     method: 'delete',
   },
 
   // ----------------Slider--------------------------///////
 
   SliderDatapost: {
-    url: `${backendDomain}/api/SliderDatapost`,
+    url: `${backendDomain}/api/sliders/create/`,
     method: 'post',
   },
   SliderDataget: {
-    url: `${backendDomain}/api/Sliderdataget`,
+    url: `${backendDomain}/api/sliders/`,
     method: 'get',
   },
   SliderDataDelete: {
-    url: `${backendDomain}/api/SliderDataDelete`,
+    url: `${backendDomain}/api/sliders/<int:pk>/`,
     method: 'delete',
   },
   updateSliderData: {
-    url: `${backendDomain}/api/updateSliderData`,
+    url: `${backendDomain}/api/sliders/<int:pk>/`,
     method: 'put',
   },
   // Admin routes

@@ -45,9 +45,15 @@ const SliderUpload = () => {
     uploadData.append('image', formdata.image)
     uploadData.append('Title', formdata.Title)
     uploadData.append('description', formdata.description)
+    const token = localStorage.getItem('accessToken')
 
     try {
-      await axios.post(SummaryApi.SliderDatapost.url, uploadData)
+      await axios.post(SummaryApi.SliderDatapost.url, uploadData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data',
+        },
+      })
       alert('Upload successful!')
       setFormdata({ image: null, Title: '', description: '' })
 
@@ -62,9 +68,14 @@ const SliderUpload = () => {
 
   const hsandleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this item?')) return
+    const token = localStorage.getItem('accessToken')
 
     try {
-      await axios.delete(`${SummaryApi.SliderDataDelete.url}/${id}`)
+      await axios.delete(`${SummaryApi.SliderDataDelete.url}/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       alert('Delete successful!')
 
       // Update local data state
@@ -119,8 +130,8 @@ const SliderUpload = () => {
                   ? editFormData.image.name
                   : item.image,
               }
-            : item
-        )
+            : item,
+        ),
       )
       alert('Update successful!')
       setEditingId(null)
