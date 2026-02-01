@@ -42,7 +42,7 @@ const SummaryApi = {
 
   // ----------------Slider--------------------------///////
   SliderDatapost: {
-    url: `${backendDomain}/api/sliders/create/`,
+    url: `${backendDomain}/api/sliders/`,
     method: 'post',
   },
 

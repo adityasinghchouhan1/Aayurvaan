@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.generics import(
   ListAPIView,
+  ListCreateAPIView,
   CreateAPIView,
   RetrieveUpdateDestroyAPIView
 )
@@ -10,15 +11,15 @@ from .serializers import SliderSerializer
 # Create your views here.
 
 # 🔹 Client side – public sliders
-class SliderListView(ListAPIView):
-    queryset = Slider.objects.all()
-    serializer_class=SliderSerializer
-    permission_classes=[AllowAny]
 
-class SliderCreateView(CreateAPIView):
-    queryset=Slider.objects.all()
-    serializer_class=SliderSerializer
-    permission_classes=[IsAuthenticated]
+class SliderListCreateView(ListCreateAPIView):
+    queryset = Slider.objects.all()
+    serializer_class = SliderSerializer
+
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        return [IsAuthenticated()]
 
 class SliderDetailView(RetrieveUpdateDestroyAPIView):
     queryset=Slider.objects.all()
