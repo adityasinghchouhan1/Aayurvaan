@@ -97,14 +97,6 @@ export default function ImageSlider() {
     fetchdata()
   }, [])
 
-  // const data = [
-  //   {
-  //     image: Img,
-  //     Title: 'Slide One',
-  //     description: 'This is the first slide description.',
-  //   },
-  // ]
-
   return (
     <div className="w-full overflow-hidden h-[100vh] mt-10">
       <Swiper
@@ -119,7 +111,7 @@ export default function ImageSlider() {
             <div
               className="w-full h-[90vh]  bg-center bg-cover flex flex-col items-center justify-center text-white text-center px-4"
               style={{
-                backgroundImage: slide.image,
+                backgroundImage: `url(${slide.image})`,
               }}
             >
               <div className=" absolute bottom-10 sm:left-8 left-0  flex flex-col justify-start items-start p-5">
