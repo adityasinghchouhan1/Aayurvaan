@@ -11,7 +11,7 @@ const SummaryApi = {
     method: 'get',
   },
   Sliderdataget: {
-    url: `${backendDomain}/api/Sliderdataget`,
+    url: `${backendDomain}/api/sliders`,
     method: 'get',
   },
 }
