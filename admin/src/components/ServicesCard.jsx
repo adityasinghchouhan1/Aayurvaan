@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import SummaryApi from '../common/SummaryAPI'
 
@@ -104,12 +104,12 @@ const ServicesCard = () => {
         updateData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },
-        }
+        },
       )
       const updatedItem = res.data
 
       setData((prev) =>
-        prev.map((item) => (item._id === id ? updatedItem : item))
+        prev.map((item) => (item._id === id ? updatedItem : item)),
       )
       setEditingId(null)
       alert('Update successful!')

@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from rest_framework.generics import(
-  ListAPIView,
   ListCreateAPIView,
-  CreateAPIView,
   RetrieveUpdateDestroyAPIView
 )
 from rest_framework.permissions import AllowAny,IsAuthenticated
