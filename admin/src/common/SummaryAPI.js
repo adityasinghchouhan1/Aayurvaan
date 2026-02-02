@@ -32,11 +32,11 @@ const SummaryApi = {
     method: 'get',
   },
   updateServices: {
-    url: `${backendDomain}/api/therapy/<int:pk>/`,
+    url: `${backendDomain}/api/therapy`,
     method: 'put',
   },
   deleteServices: {
-    url: `${backendDomain}/api/therapy/`,
+    url: `${backendDomain}/api/therapy`,
     method: 'delete',
   },
 

@@ -73,7 +73,14 @@ const ServicesCard = () => {
     if (!window.confirm('Are you sure you want to delete this item?')) return
 
     try {
-      await axios.delete(`${SummaryApi.deleteServices.url}/${id}`)
+      const token = localStorage.getItem('accessToken')
+
+      await axios.delete(`${SummaryApi.deleteServices.url}/${id}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data',
+        },
+      })
       alert('Delete successful!')
 
       // Update local data state
@@ -112,12 +119,16 @@ const ServicesCard = () => {
       }
       updateData.append('Title', editFormData.Title)
       updateData.append('description', editFormData.description)
+      const token = localStorage.getItem('accessToken')
 
       const res = await axios.put(
-        `${SummaryApi.updateServices.url}/${id}`,
+        `${SummaryApi.updateServices.url}/${id}/`,
         updateData,
         {
-          headers: { 'Content-Type': 'multipart/form-data' },
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
         },
       )
       const updatedItem = res.data
