@@ -21,22 +21,22 @@ const SummaryApi = {
     method: 'get',
   },
 
-  //------------------- For Uploadservices
+  //------------------- For UploadTherapy
 
   Uploadservices: {
-    url: `${backendDomain}/api/sliders/`,
+    url: `${backendDomain}/api/therapy/`,
     method: 'post',
   },
   Servisesget: {
-    url: `${backendDomain}/api/sliders/`,
+    url: `${backendDomain}/api/therapy/`,
     method: 'get',
   },
   updateServices: {
-    url: `${backendDomain}/api/sliders/<int:pk>/`,
+    url: `${backendDomain}/api/therapy/<int:pk>/`,
     method: 'put',
   },
   deleteServices: {
-    url: `${backendDomain}/api/sliders/`,
+    url: `${backendDomain}/api/therapy/`,
     method: 'delete',
   },
 

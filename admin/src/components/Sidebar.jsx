@@ -62,7 +62,7 @@ const Sidebar = () => {
             className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
           >
             <FaClipboardList className="mr-2" size={20} />
-            {!isCollapsed && <span>Services</span>}
+            {!isCollapsed && <span>Therapy</span>}
           </Link>
           <Link
             to="SliderUpload"
