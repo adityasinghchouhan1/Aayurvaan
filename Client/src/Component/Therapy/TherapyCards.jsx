@@ -93,6 +93,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import Heading from '../../Reuse/Heading'
 
 const therapyData = [
   {
@@ -161,9 +162,13 @@ const TherapyCards = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 px-6 py-20">
       {/* Heading */}
-      <h2 className="mb-16 text-center text-4xl font-bold text-emerald-900">
-        Healing <span className="text-emerald-600">Therapies</span>
-      </h2>
+      <Heading
+        title={'Healing '}
+        title_l={'Therapies'}
+        discrption={
+          'Therapies that make life easy to live or treat client carefully'
+        }
+      />
 
       {/* Cards Grid */}
       <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-3">

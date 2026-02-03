@@ -9,12 +9,12 @@ import ServicesHome from './Services/ServicesHome'
 
 const Home = () => {
   return (
-    <>
+    <div className="bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200">
       <Slide />
       <Welcome />
       <ServicesHome />
       <VisionMission />
-    </>
+    </div>
   )
 }
 
