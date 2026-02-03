@@ -7,7 +7,8 @@ const VisionMission = () => {
     <div className="flex flex-col md:flex-row sm:px-10  justify-center items-center pb-10 sm:pb-0">
       <div className="flex flex-col items-center justify-center my-6 sm:my-20 px-5">
         <Heading
-          title={'Our Vision And Mission'}
+          title={'Our Vision And '}
+          title_l={'Mission'}
           textcolor={'[#0b223d]'}
           discrption={
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. In dicta eos fugit vitae voluptatem quisquam asperiores tenetur ad beatae '

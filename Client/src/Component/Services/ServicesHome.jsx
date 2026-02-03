@@ -260,12 +260,12 @@ const ServicesHome = () => {
               duration: 0.4,
               ease: 'back.out(1.7)',
             },
-            '-=0.5'
+            '-=0.5',
           )
           .from(
             right,
             { x: 80, opacity: 0, duration: 0.8, ease: 'power3.out' },
-            '-=0.5'
+            '-=0.5',
           )
       })
 
@@ -278,7 +278,8 @@ const ServicesHome = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center my-14 overflow-hidden">
       <Heading
-        title={'Services that You Want'}
+        title={'Services that You '}
+        title_l={'Want'}
         discrption={
           'A service is an intangible activity or benefit provided by one party to another that does not result in the transfer of ownership'
         }

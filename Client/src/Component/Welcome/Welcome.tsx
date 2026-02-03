@@ -32,7 +32,7 @@ const Welcome = () => {
             start: 'top 85%',
             toggleActions: 'play none none reverse',
           },
-        }
+        },
       )
     })
   }, [])
@@ -47,7 +47,8 @@ const Welcome = () => {
   return (
     <div className="px-4 md:px-10 lg:px-20">
       <Heading
-        title={'WELCOME TO AAYURVAAN'}
+        title={'WELCOME TO '}
+        title_l={'AAYURVAAN'}
         discrption={
           'A change in your life from Ayurvan, where you get a healthy body, happy life, good thoughts and a chance to know nature closely.'
         }

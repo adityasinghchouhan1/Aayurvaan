@@ -33,7 +33,8 @@ const Servises = () => {
     <>
       <div className="p-5">
         <Heading
-          title={'Services that You Want'}
+          title={'Services that You '}
+          title_l={'Want'}
           discrption={
             'Servises Lorem ipsum dolor sit amet consectetur adipisicing elit.Aperiam repellendus sequi maiores odio dicta voluptatum atque'
           }
