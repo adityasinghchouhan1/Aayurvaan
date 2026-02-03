@@ -34,7 +34,7 @@ const Heading = ({ title, title_l, discrption }) => {
       ref={headingRef}
       className="flex items-center justify-center flex-col mt-5 mb-10"
     >
-      <h2 className="mb-14 text-center text-5xl font-bold text-emerald-900">
+      <h2 className="mb-3 text-center text-5xl font-bold text-emerald-900">
         {title}
         <span className="text-emerald-600">{title_l}</span>
       </h2>
