@@ -39,10 +39,11 @@ const ContectUs = () => {
   }
 
   return (
-    <div className="flex justify-center flex-col py-12">
+    <div className="flex justify-center flex-col py-12 bg-gradient-to-br from-white via-green-50 to-emerald-200 ">
       <Wrapper title={'Contect Us'} description={'Fasting'} image={Logo} />{' '}
       <Heading
-        title={'Contact Us'}
+        title={'Contact '}
+        title_l={'Us'}
         discrption={'Fill out your query here and connect with us'}
         textcolor={'white'}
       />
@@ -97,7 +98,7 @@ const ContectUs = () => {
         {error && <p className="text-red-600">{error}</p>}
         {success && <p className="text-green-600">{success}</p>}
 
-        <Button title="Contact Us" color="#ff5733" Onclick={handleSubmit} />
+        <Button title="Contact Us" Onclick={handleSubmit} />
       </div>
     </div>
   )

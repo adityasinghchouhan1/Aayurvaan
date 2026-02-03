@@ -13,8 +13,7 @@ const Button = ({ Onclick, color, title }) => {
     <div className="flex justify-center items-center">
       <button
         onClick={handleClick}
-        style={{ backgroundColor: color }}
-        className={`text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg relative overflow-hidden ${
+        className={`  px-6 py-3 rounded-full shadow-md  duration-300 ease-in-out hover:scale-105  relative overflow-hidden bg-emerald-600  text-sm font-medium text-white transition-all hover:bg-emerald-700 hover:shadow-lg ${
           isClicked ? 'animate-pingOnce' : ''
         }`}
       >
