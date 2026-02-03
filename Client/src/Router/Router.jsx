@@ -1,10 +1,22 @@
 import { createBrowserRouter } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import App from '../App'
-import Home from '../Component/Home'
-import ContectUs from '../Component/ContectUs'
-import About from '../Component/About'
-import Therapy from '../Component/Therapy/Therapy'
-import Fastingtherapy from '../Component/Fastingtherapy/Fastingtherapy'
+
+// 🔥 Lazy imports
+const Home = lazy(() => import('../Component/Home'))
+const ContectUs = lazy(() => import('../Component/ContectUs'))
+const About = lazy(() => import('../Component/About'))
+const Therapy = lazy(() => import('../Component/Therapy/Therapy'))
+const Fastingtherapy = lazy(
+  () => import('../Component/Fastingtherapy/Fastingtherapy'),
+)
+
+// Loader UI
+const Loader = () => (
+  <div className="flex justify-center items-center h-[60vh] text-green-600 text-xl">
+    Loading...
+  </div>
+)
 
 const router = createBrowserRouter([
   {
@@ -13,27 +25,43 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <Home />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
-        path: 'contect',
-        element: <ContectUs />,
+        path: 'contact',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <ContectUs />
+          </Suspense>
+        ),
       },
       {
         path: 'about',
-        element: <About />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <About />
+          </Suspense>
+        ),
       },
       {
-        path: 'Therapy',
-        element: <Therapy />,
+        path: 'therapy',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Therapy />
+          </Suspense>
+        ),
       },
       {
-        path: 'FastingTherapy',
-        element: <Fastingtherapy />,
-      },
-      {
-        path: 'Contact',
-        element: <ContectUs />,
+        path: 'fasting-therapy',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Fastingtherapy />
+          </Suspense>
+        ),
       },
     ],
   },
