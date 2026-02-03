@@ -14,6 +14,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/sliders`,
     method: 'get',
   },
+  Therapydataget: {
+    url: `${backendDomain}/api/therapy`,
+    method: 'get',
+  },
 }
 
 export default SummaryApi
