@@ -160,7 +160,7 @@ const TherapyCards = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-emerald-200 px-6 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-white via-green-50 to-emerald-200 px-6 py-20">
       {/* Heading */}
       <Heading
         title={'Healing '}

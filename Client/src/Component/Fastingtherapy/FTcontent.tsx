@@ -6,7 +6,8 @@ const FTcontent = () => {
     <>
       <div className="flex flex-col px-5 justify-center items-center">
         <Heading
-          title={' Tips on Therapy - Fasting Therapy'}
+          title={'Tips on Therapy - Fasting '}
+          title_l={'Therapy..'}
           discrption={
             ' Fasting therapy is considered a primary treatment method in Naturopathy'
           }
