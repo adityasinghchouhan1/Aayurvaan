@@ -1,6 +1,7 @@
 import React from 'react'
 import Wrapper from '../../UI/Wrapper'
 import Logo from '../../../public/meditating.png'
+import TherapyCards from './TherapyCards'
 
 const Therapy = () => {
   return (
@@ -12,6 +13,7 @@ const Therapy = () => {
         }
         image={Logo}
       />{' '}
+      <TherapyCards />
     </div>
   )
 }

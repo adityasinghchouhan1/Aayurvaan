@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import logo from '../../public/wleaf.png'
 gsap.registerPlugin(ScrollTrigger)
 
-const Heading = ({ title, discrption }) => {
+const Heading = ({ title, title_l, discrption }) => {
   const headingRef = useRef(null)
 
   useEffect(() => {
@@ -34,9 +34,11 @@ const Heading = ({ title, discrption }) => {
       ref={headingRef}
       className="flex items-center justify-center flex-col mt-5 mb-10"
     >
-      <h1 className=" text-4xl sm:text-6xl font-bold text-center text-[#0b223d]">
+      <h2 className="mb-14 text-center text-5xl font-bold text-emerald-900">
         {title}
-      </h1>
+        <span className="text-emerald-600">{title_l}</span>
+      </h2>
+      {/* <h1 className=" text-4xl sm:text-6xl font-bold text-center text-[#0b223d]"></h1> */}
       <img src={logo} alt="leaf" className="w-12 h-12 mt-2" />
       <p className="text-gray-500 font-Yellowtail text-center sm:w-[50%] w-[80%] mt-3">
         {discrption}
