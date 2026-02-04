@@ -13,8 +13,15 @@ const Fastingtherapy = lazy(
 
 // Loader UI
 const Loader = () => (
-  <div className="flex justify-center items-center h-[60vh] text-green-600 text-xl">
-    Loading...
+  <div className="flex flex-col justify-center items-center h-[60vh]">
+    <div className="relative">
+      <div className="w-16 h-16 rounded-full border-4 border-green-200"></div>
+      <div className="absolute top-0 left-0 w-16 h-16 rounded-full border-4 border-t-green-600 border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
+    </div>
+
+    <p className="mt-4 text-green-700 text-sm tracking-widest uppercase">
+      Please wait
+    </p>
   </div>
 )
 
@@ -56,7 +63,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'fasting-therapy',
+        path: 'FastingTherapy',
         element: (
           <Suspense fallback={<Loader />}>
             <Fastingtherapy />
