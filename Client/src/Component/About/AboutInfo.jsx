@@ -54,7 +54,7 @@ const AboutInfo = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-br from-emerald-50 to-green-100 py-24 h-screen"
+      className="bg-gradient-to-br from-emerald-50 to-green-100 py-24"
     >
       <div className="mx-auto max-w-7xl px-6 text-center">
         {/* Heading */}

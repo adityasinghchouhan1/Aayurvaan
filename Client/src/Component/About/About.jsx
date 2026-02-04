@@ -13,7 +13,7 @@ import AboutInfo from './AboutInfo'
 const About = () => {
   return (
     <>
-      <div className="bg-gradient-to-b from-emerald-50 to-white">
+      <div className="bg-gradient-to-br from-emerald-50 to-green-100">
         {/* Hero */}
         <Wrapper
           title={'About'}
