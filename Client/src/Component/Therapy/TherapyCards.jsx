@@ -94,47 +94,53 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Heading from '../../Reuse/Heading'
+import mt from '../../../public/mindfulness-therapy.jpg'
+import st from '../../../public/StressManagementTherapy.jpg'
+import ct from '../../../public/CognitiveTherapy.jpg'
+import et from '../../../public/EmotionalHealingTherapy.jpg'
+import yt from '../../../public/YogaTherapy.jpg'
+import sleept from '../../../public/SleepTherapy.jpg'
 
 const therapyData = [
   {
     id: 1,
     Title: 'Mindfulness Therapy',
-    file: 'http://127.0.0.1:8000/media/therapy/mindfulness.avif',
+    file: mt,
     description:
       'Mindfulness Therapy helps you stay present and aware of your thoughts without judgment. It reduces stress, anxiety, and improves emotional balance.',
   },
   {
     id: 2,
     Title: 'Cognitive Behavioral Therapy',
-    file: 'http://127.0.0.1:8000/media/therapy/cbt.avif',
+    file: ct,
     description:
       'CBT focuses on identifying negative thought patterns and replacing them with healthier thinking to improve mood and behavior.',
   },
   {
     id: 3,
     Title: 'Stress Management Therapy',
-    file: 'http://127.0.0.1:8000/media/therapy/stress.avif',
+    file: st,
     description:
       'This therapy teaches relaxation techniques, breathing exercises, and lifestyle strategies to manage daily stress effectively.',
   },
   {
     id: 4,
     Title: 'Emotional Healing Therapy',
-    file: 'http://127.0.0.1:8000/media/therapy/emotional.avif',
+    file: et,
     description:
       'Emotional Healing Therapy helps release emotional pain, heal past trauma, and restore inner peace through guided support.',
   },
   {
     id: 5,
     Title: 'Yoga & Relaxation Therapy',
-    file: 'http://127.0.0.1:8000/media/therapy/yoga.avif',
+    file: yt,
     description:
       'Yoga & Relaxation Therapy combines gentle yoga, breathing, and meditation techniques to calm the mind and body.',
   },
   {
     id: 6,
     Title: 'Sleep Improvement Therapy',
-    file: 'http://127.0.0.1:8000/media/therapy/sleep.avif',
+    file: sleept,
     description:
       'Sleep Improvement Therapy focuses on better sleep routines and relaxation methods for deep, restful sleep.',
   },
