@@ -5,7 +5,7 @@ import App from '../App'
 // 🔥 Lazy imports
 const Home = lazy(() => import('../Component/Home'))
 const ContectUs = lazy(() => import('../Component/ContectUs'))
-const About = lazy(() => import('../Component/About'))
+const About = lazy(() => import('../Component/About/About'))
 const Therapy = lazy(() => import('../Component/Therapy/Therapy'))
 const Fastingtherapy = lazy(
   () => import('../Component/Fastingtherapy/Fastingtherapy'),
