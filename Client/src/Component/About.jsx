@@ -2,67 +2,96 @@ import React from 'react'
 import Heading from '../Reuse/Heading'
 import Wrapper from '../UI/Wrapper'
 import Logo from '../../public/meditating.png'
+
+import img1 from '../../public/young-beautiful-woman-practicing-yoga-outdoors-in-2025-01-08-10-18-e1759207061202.jpg'
+import img2 from '../../public/young-girls-are-sitting-in-the-lotus-position-in-a-2024-09-18-17-44-09.jpg'
+import img3 from '../../public/woman-practicing-yoga-outdoors-in-park-2025-03-07-14-12-57-utc.jpg'
+import img4 from '../../public/vertical-shot-of-young-asian-woman-doing-yoga-pra-2025-03-08-04-27-07-utc-683x1024.jpg'
+import img5 from '../../public/SS.jpg'
+
 const About = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-b from-emerald-50 to-white">
+      {/* Hero */}
       <Wrapper
         title={'About'}
         description={
-          '**AAyurvaan** is a premier holistic health sanctuary designed to restore the natural harmony of your mind'
+          'AAyurvaan is a premier holistic health sanctuary designed to restore the natural harmony of your mind.'
         }
         image={Logo}
       />
-      {/* <div className="flex justify-content-center items-center flex-col">
+
+      {/* Content Section */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
         <Heading
-          title={'Know Abouts Us'}
-          discrption={'Zoon Of Our Jurney'}
-          textcolor={'white'}
+          title={'Know More About'}
+          title_l={'AAyurvaan'}
+          discrption={
+            'Homeopathy, Naturopathy, Yoga and therapies to make life healthier and balanced.'
+          }
+          textcolor={'emerald'}
         />
-        <div className="flex justify-around items-center p-5 sm:flex-row flex-col">
-          <div className="overflow-hidden transition-all hover:scale-105">
-            <img src={Aboutimg} className=" w-80 sm:mb-0 mb-10" />
+
+        <div className="mt-16 grid items-center gap-14 lg:grid-cols-2">
+          {/* Image Grid */}
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={img1}
+              className="rounded-2xl object-cover shadow-md transition-transform hover:scale-105"
+            />
+            <img
+              src={img2}
+              className="rounded-2xl object-cover shadow-md transition-transform hover:scale-105"
+            />
+            <img
+              src={img3}
+              className="rounded-2xl object-cover shadow-md transition-transform hover:scale-105"
+            />
+            <img
+              src={img4}
+              className="rounded-2xl object-cover shadow-md transition-transform hover:scale-105"
+            />
           </div>
-          <div className="sm:h-[100vh] h-0 w-[1px] shadow-[0_0_20px_3px_rgba(246,79,49,1)]"></div>
-          <div className="sm:p-5 p-1 text-white font-serif text-sm text-justify sm:w-[50%]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, ad
-            rerum. Consequuntur, voluptate vero tenetur excepturi pariatur et
-            culpa maiores ullam voluptatibus dolores recusandae ipsam commodi,
-            laborum optio laboriosam saepe, cumque beatae iure accusamus ad
-            debitis! Quos facilis mollitia aspernatur, eius aliquam illum
-            assumenda delectus? Laboriosam cumque cum architecto distinctio quis
-            animi eaque magnam doloremque eligendi similique voluptatem dolor,
-            adipisci dolore minus nisi quibusdam nostrum aspernatur veritatis
-            illum facere praesentium impedit. Harum, explicabo! Eius quasi
-            molestias illum unde rem voluptate, dolorem temporibus nesciunt
-            minus non repellendus vel id beatae illo, assumenda recusandae
-            soluta eum porro tempora nisi quis nulla veritatis deleniti? Qui
-            minima, accusamus inventore, praesentium odio dolorum culpa
-            molestiae laudantium a ratione nihil, exercitationem quia ipsa
-            maiores odit officia atque cumque reiciendis! Recusandae provident
-            dignissimos deserunt tenetur commodi repudiandae, illo quia.
-            Sapiente est minus, provident nulla alias, qui aut eveniet officia
-            iste ipsa quaerat facere mollitia quam quae aliquam reprehenderit
-            doloribus dolore maiores! Dolore vel aliquid quam corrupti ipsa
-            dolor nostrum iure. Ratione totam delectus, repellendus illum alias
-            architecto mollitia atque eos sed ea dignissimos voluptate
-            praesentium dolore harum exercitationem laborum voluptas accusamus
-            quas temporibus quam fugiat. Ullam at eveniet illo vel facere rerum
-            velit similique esse odit. Iure aut provident omnis quaerat, nihil
-            quae mollitia nulla ullam fuga obcaecati amet aspernatur minima ex
-            quam, perferendis placeat accusamus animi consectetur eum adipisci
-            cumque modi facilis expedita. Voluptate laboriosam obcaecati iste?
-            At incidunt nemo eligendi laborum sapiente fuga, iusto aut assumenda
-            quia facilis laudantium quam voluptas id cupiditate. Temporibus
-            delectus sequi eligendi laborum cumque enim unde autem
-            exercitationem at. Nobis recusandae dolorem praesentium adipisci
-            laboriosam enim maxime doloribus nemo cumque aperiam. Impedit
-            voluptatem ipsum iusto, cupiditate dolores, cumque quod, nobis optio
-            ut assumenda architecto odio ullam sed harum eligendi ex quae magni
+
+          {/* Text */}
+          <div className="text-justify font-serif text-[20px] leading-7 text-gray-700">
+            <p className="mb-4">
+              <span className="font-semibold text-emerald-700">AAyurvaan</span>{' '}
+              is a premier holistic health sanctuary designed to restore the
+              natural harmony of your mind, body, and spirit. It offers a truly
+              personalized and transformative healing experience.
+            </p>
+
+            <p className="mb-4">
+              By blending the ancient wisdom of{' '}
+              <span className="font-semibold">Ayurveda</span>, the precision of{' '}
+              <span className="font-semibold">Homeopathy</span>, the balance of{' '}
+              <span className="font-semibold">Yoga</span>, and the therapeutic
+              strength of <span className="font-semibold">Naturopathy</span>,
+              AAyurvaan delivers a complete pathway to wellness.
+            </p>
+
+            <p>
+              Whether you seek rejuvenation, recovery, or inner balance,
+              AAyurvaan nurtures every aspect of your being—helping you achieve
+              sustainable health, vitality, and peace naturally.
+            </p>
+            <p className="mt-5">
+              our expert team specializes in detoxification, pain management,
+              weight loss, stress relief, and lifestyle counseling, ensuring
+              comprehensive care for your body, mind, and soul.
+            </p>
+
+            <button className="mt-8 rounded-full bg-emerald-600 px-8 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 hover:shadow-lg">
+              Explore Our Therapies →
+            </button>
+            <img
+              src={img5}
+              className="col-span-2 rounded-2xl object-cover shadow-lg transition-transform hover:scale-105 mt-5"
+            />
           </div>
         </div>
-      </div> */}
-
-      {/* <About2 /> */}
+      </section>
     </div>
   )
 }
