@@ -1,7 +1,7 @@
 import React from 'react'
 import YogaGirl from '../../../public/woman-practicing-yoga-outdoors-in-park-2025-03-08-04-32-56-utc-683x1024.jpg'
 import Heading from '../../Reuse/Heading'
-import ld from '../../../public/Ld3.png'
+import ld from '../../../public/Ld3-removebg-preview.png'
 const VisionMission = () => {
   return (
     <div className="flex flex-col md:flex-row sm:px-10  justify-center items-center pb-10 sm:pb-0">
@@ -45,7 +45,11 @@ const VisionMission = () => {
         </div>
       </div>
       <div className=" w-full flex justify-center items-center my-0 sm:my-10 px-5">
-        <img src={YogaGirl} alt="Yoga/>" className="w-full h-auto" />
+        <img
+          src={YogaGirl}
+          alt="Yoga/>"
+          className="w-full h-auto rounded-2xl"
+        />
       </div>
     </div>
   )
