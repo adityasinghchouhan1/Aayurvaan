@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: 'About', path: '/About' },
     { name: 'Therapy', path: '/Therapy' },
     { name: 'Fasting Therapy', path: '/FastingTherapy' },
-    { name: 'Treatments', path: '/Treatments' },
+    { name: 'Products', path: '/Products' },
     { name: 'Contact', path: '/Contact' },
   ]
 
@@ -46,7 +46,7 @@ const Navbar = () => {
 
             {/* CART ICON */}
             <NavLink
-              to="/cart"
+              to="/Cart"
               className="relative text-xl hover:text-green-600"
             >
               <FaShoppingCart />
@@ -91,7 +91,6 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-
     </>
   )
 }
