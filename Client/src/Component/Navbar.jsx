@@ -1,95 +1,89 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa'
 import logo from '../../public/logo-img.png'
 
 const Navbar = () => {
-  const [isOpen, setIsopen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const ToggleButton = () => {
-    setIsopen(!isOpen)
-  }
+  const ToggleButton = () => setIsOpen(!isOpen)
+  const CloseButton = () => setIsOpen(false)
 
-  const CloseButton = () => {
-    setIsopen(false)
-  }
+  const menuItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/About' },
+    { name: 'Therapy', path: '/Therapy' },
+    { name: 'Fasting Therapy', path: '/FastingTherapy' },
+    { name: 'Treatments', path: '/Treatments' },
+    { name: 'Contact', path: '/Contact' },
+  ]
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-20 flex justify-between items-center pr-2 py-3 bg-white text-[#0b223d">
-        {/* Logo */}
-        <div className="bg-gradient-to-r rounded-sm from-green-200 flex justify-center items-center">
-          <img
-            src={logo}
-            className="w-16 bg-center bg-no-repeat object-fit-cover bg-cover"
-          />
-          <h1 className="text-[#0b223d] font-Yellowtail text-3xl">Aayurvaan</h1>
+      {/* NAVBAR */}
+      <nav className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
+        <div className="flex items-center justify-between px-4 py-3">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <img src={logo} className="w-14" />
+            <h1 className="font-Yellowtail text-3xl text-[#0b223d]">
+              Aayurvaan
+            </h1>
+          </div>
+
+          {/* DESKTOP MENU */}
+          <ul className="hidden md:flex items-center gap-12 font-bold text-[#0b223d]">
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <NavLink
+                  to={item.path}
+                  className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
+
+            {/* CART ICON */}
+            <NavLink
+              to="/cart"
+              className="relative text-xl hover:text-green-600"
+            >
+              <FaShoppingCart />
+              <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-600 text-xs text-white">
+                0
+              </span>
+            </NavLink>
+          </ul>
+
+          {/* MOBILE ICONS */}
+          <div className="flex items-center gap-4 md:hidden">
+            <NavLink to="/cart" className="relative text-xl">
+              <FaShoppingCart />
+              <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-600 text-xs text-white">
+                0
+              </span>
+            </NavLink>
+
+            <button onClick={ToggleButton} className="text-2xl">
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
         </div>
 
-        {/* DESKTOP MENU */}
-        <ul className="hidden md:flex gap-12 font-bold text-[#0b223d]">
-          {[
-            { name: 'Home', path: '' },
-            { name: 'About', path: 'About' },
-            { name: 'Therapy', path: 'Therapy' },
-            { name: 'Fasting Therapy', path: 'FastingTherapy' },
-            { name: 'Treatments', path: 'Treatments' },
-            { name: 'Contact', path: 'Contact' },
-          ].map((item) => (
-            <li key={item.name}>
-              <NavLink
-                to={item.path}
-                onClick={CloseButton}
-                className="
-                  relative w-fit 
-                  after:content-[''] after:absolute after:left-0 after:-bottom-1
-                  after:h-[2px] after:w-0 after:bg-green-500 
-                  after:transition-all after:duration-300 
-                  hover:after:w-full
-                "
-              >
-                {item.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-
-        {/* HAMBURGER ICON */}
+        {/* MOBILE TOP DROPDOWN MENU */}
         <div
-          onClick={ToggleButton}
-          className="md:hidden text-2xl cursor-pointer"
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
-
-        {/* MOBILE SLIDE MENU */}
-        <div
-          className={`md:hidden fixed z-[9999] top-0 left-0 text-[#0b223d] h-full bg-white transition-all duration-300 overflow-hidden font-serif border-r-4 border-green-500 ${
-            isOpen ? 'w-56 backdrop-blur-sm' : 'w-0'
+          className={`md:hidden overflow-hidden bg-white transition-all duration-300 ${
+            isOpen ? 'max-h-[500px] border-t' : 'max-h-0'
           }`}
         >
-          <ul className="flex flex-col justify-center items-center gap-8 text-xl pt-16 text-center ">
-            {[
-              { name: 'Home', path: '' },
-              { name: 'About', path: 'About' },
-              { name: 'Therapy', path: 'Therapy' },
-              { name: 'Treatments', path: 'Treatments' },
-              { name: 'Fasting Therapy', path: 'FastingTherapy' },
-              { name: 'Contact', path: 'Contact' },
-            ].map((item) => (
+          <ul className="flex flex-col items-center gap-6 py-6 font-semibold text-[#0b223d]">
+            {menuItems.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.path}
                 onClick={CloseButton}
-                className="
-                  relative w-full py-2 
-                  transition-all duration-200 font-semibold text-[#0b223d] text-center
-                  hover:bg-black/40
-                  after:content-[''] after:absolute after:left-1/2 after:-bottom-0
-                  after:h-[2px] after:w-0 after:bg-green-500 
-                  after:transition-all after:duration-300 
-                  hover:after:w-1/2
-                "
+                className="relative after:absolute after:left-1/2 after:-bottom-1 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all after:duration-300 hover:after:w-1/2"
               >
                 {item.name}
               </NavLink>
@@ -97,6 +91,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+
     </>
   )
 }
