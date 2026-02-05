@@ -11,7 +11,7 @@ const Fastingtherapy = lazy(
   () => import('../Component/Fastingtherapy/Fastingtherapy'),
 )
 const Cart = lazy(() => import('../Component/Cart/Cart'))
-const Products = lazy(() => '../Component/Products/Products.jsx')
+const Products = lazy(() => import('../Component/Products/Products.jsx'))
 // Loader UI
 const Loader = () => (
   <div className="flex flex-col justify-center items-center h-[60vh]">
