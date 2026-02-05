@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart, clearCart } from '../../redux/cartSlice'
 import { placeOrder } from '../Services/orderApi'
+import Heading from '../../Reuse/Heading'
 
 const Cart = () => {
+  const [showToast, setShowToast] = useState(false)
+
   const { items } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
 
@@ -17,9 +20,16 @@ const Cart = () => {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-20">
-      <h2 className="mb-10 text-center text-4xl font-bold text-emerald-700">
-        Your Cart
-      </h2>
+      {showToast && (
+        <div className="fixed top-6 right-6 z-50 rounded-xl bg-red-500 px-6 py-4 text-white shadow-lg transition-all">
+          ✅ Product remove from the cart
+        </div>
+      )}
+      <Heading
+        title={'Your'}
+        title_l={' Cart'}
+        discrption={'Your Happy Products....'}
+      />
 
       {items.length === 0 ? (
         <p className="text-center text-gray-500">Cart is empty 🛒</p>
@@ -39,7 +49,11 @@ const Cart = () => {
                 <span className="font-bold">₹{item.price * item.qty}</span>
 
                 <button
-                  onClick={() => dispatch(removeFromCart(item.id))}
+                  onClick={() => {
+                    dispatch(removeFromCart(item.id))
+                    setShowToast(true)
+                    setTimeout(() => setShowToast(false), 2000)
+                  }}
                   className="text-red-500 hover:underline"
                 >
                   Remove
