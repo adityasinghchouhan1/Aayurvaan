@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart, clearCart } from '../../redux/cartSlice'
-import { placeOrder } from '../services/orderApi'
+import { placeOrder } from '../Services/orderApi'
 
 const Cart = () => {
   const { items } = useSelector((state) => state.cart)
