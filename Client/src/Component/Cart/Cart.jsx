@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromCart, clearCart } from '../../redux/cartSlice'
 import { placeOrder } from '../Services/orderApi'
 import Heading from '../../Reuse/Heading'
+import {
+  removeFromCart,
+  clearCart,
+  increaseQty,
+  decreaseQty,
+} from '../../redux/cartSlice'
 
 const Cart = () => {
   const [showToast, setShowToast] = useState(false)
@@ -41,31 +46,43 @@ const Cart = () => {
               key={item.id}
               className="mb-6 flex flex-col sm:flex-row items-center gap-6 rounded-2xl bg-white p-5 shadow-md"
             >
-              {/* IMAGE */}
               <img
                 src={item.image}
-                alt={item.name}
                 className="h-24 w-24 rounded-xl object-cover"
               />
 
-              {/* INFO */}
               <div className="flex-1">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-sm text-gray-600">Qty: {item.qty}</p>
+
+                {/* QTY CONTROLS */}
+                <div className="mt-2">
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => dispatch(decreaseQty(item.id))}
+                      className="h-8 w-8 rounded-full bg-gray-200 text-lg hover:bg-gray-300"
+                    >
+                      −
+                    </button>
+
+                    <span className="font-semibold">{item.qty}</span>
+
+                    <button
+                      onClick={() => dispatch(increaseQty(item.id))}
+                      className="h-8 w-8 rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              {/* PRICE + ACTION */}
               <div className="flex items-center gap-6">
                 <span className="font-bold text-emerald-600">
                   ₹{item.price * item.qty}
                 </span>
 
                 <button
-                  onClick={() => {
-                    dispatch(removeFromCart(item.id))
-                    setShowToast(true)
-                    setTimeout(() => setShowToast(false), 2000)
-                  }}
+                  onClick={() => dispatch(removeFromCart(item.id))}
                   className="text-red-500 hover:underline"
                 >
                   Remove
