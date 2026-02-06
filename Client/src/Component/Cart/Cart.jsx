@@ -11,6 +11,15 @@ import {
 
 const Cart = () => {
   const [showToast, setShowToast] = useState(false)
+  const [openCheckout, setOpenCheckout] = useState(false)
+
+  const [formData, setFormData] = useState({
+    name: '',
+    address: '',
+    pincode: '',
+    phone: '',
+    payment: 'COD',
+  })
 
   const { items } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
@@ -18,8 +27,16 @@ const Cart = () => {
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0)
 
   const handleOrder = async () => {
-    await placeOrder(items)
+    const orderPayload = {
+      customer: formData,
+      items,
+      total,
+    }
+
+    await placeOrder(orderPayload)
+
     dispatch(clearCart())
+    setOpenCheckout(false)
     alert('Order placed successfully 🎉')
   }
 
@@ -98,13 +115,93 @@ const Cart = () => {
             </h3>
 
             <button
-              onClick={handleOrder}
+              onClick={() => setOpenCheckout(true)}
               className="rounded-full bg-emerald-600 px-10 py-3 text-white text-lg hover:bg-emerald-700 transition"
             >
               Place Order
             </button>
           </div>
         </>
+      )}
+      {openCheckout && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 ">
+          <div className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl animate-scaleIn m-5">
+            <h2 className="mb-4 text-2xl font-bold text-emerald-600">
+              Checkout Details
+            </h2>
+
+            <div className="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                className="w-full rounded-lg border p-3"
+              />
+
+              <textarea
+                placeholder="Full Address"
+                value={formData.address}
+                onChange={(e) =>
+                  setFormData({ ...formData, address: e.target.value })
+                }
+                className="w-full rounded-lg border p-3"
+              />
+
+              <input
+                type="text"
+                placeholder="Pincode"
+                value={formData.pincode}
+                onChange={(e) =>
+                  setFormData({ ...formData, pincode: e.target.value })
+                }
+                className="w-full rounded-lg border p-3"
+              />
+
+              <input
+                type="text"
+                placeholder="Contact Number"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+                className="w-full rounded-lg border p-3"
+              />
+
+              {/* PAYMENT METHOD */}
+              <select
+                value={formData.payment}
+                onChange={(e) =>
+                  setFormData({ ...formData, payment: e.target.value })
+                }
+                className="w-full rounded-lg border p-3"
+              >
+                <option value="COD">Cash on Delivery</option>
+                <option value="UPI">UPI</option>
+                <option value="CARD">Card</option>
+              </select>
+            </div>
+
+            {/* ACTION BUTTONS */}
+            <div className="mt-6 flex justify-between">
+              <button
+                onClick={() => setOpenCheckout(false)}
+                className="rounded-full border px-6 py-2 hover:border-green-600 hover:text-green-800  font-semibold active:scale-90 transition-all"
+              >
+                Cancel
+              </button>
+
+              <button
+                onClick={handleOrder}
+                className="rounded-full bg-emerald-600 px-8 py-2 text-white hover:bg-emerald-700 active:scale-95 active:text-sm transition-all"
+              >
+                Confirm Order
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

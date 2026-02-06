@@ -48,7 +48,7 @@ export default function AdminAddProduct() {
       <h1 className="text-4xl font-bold text-center font-serif mb-10 text-indigo-700">
         Upload Products
       </h1>
-      <div className="bg-white shadow-md rounded-lg p-8  mx-auto mb-12">
+      <div className="bg-white shadow-md rounded-lg p-8 max-w-full mx-auto mb-12">
         <form onSubmit={submit}>
           <label className="block mb-2 font-semibold text-gray-700">
             Product Name
@@ -110,7 +110,9 @@ export default function AdminAddProduct() {
             onChange={handleChange}
             className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
           />
-          <button>Add Product</button>
+          <button className="text-white p-3 font-serif font-semibold rounded bg-blue-500 active:scale-90 transition-all">
+            Add Product
+          </button>
         </form>
       </div>
     </div>
