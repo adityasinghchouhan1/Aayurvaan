@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa'
 import logo from '../../public/logo-img.png'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const cartItems = useSelector((state) => state.cart.items)
 
   const ToggleButton = () => setIsOpen(!isOpen)
   const CloseButton = () => setIsOpen(false)
-
+  const cartCount = cartItems.reduce((total, item) => total + item.qty, 0)
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/About' },
@@ -50,19 +52,24 @@ const Navbar = () => {
               className="relative text-xl hover:text-green-600"
             >
               <FaShoppingCart />
-              <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-600 text-xs text-white">
-                0
-              </span>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-600 text-xs text-white">
+                  {cartCount}
+                </span>
+              )}
             </NavLink>
           </ul>
 
           {/* MOBILE ICONS */}
           <div className="flex items-center gap-4 md:hidden">
-            <NavLink to="/cart" className="relative text-xl">
-              <FaShoppingCart />
-              <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-600 text-xs text-white">
-                0
-              </span>
+            <NavLink to="/cart" className="relative">
+              <FaShoppingCart className="text-2xl text-green-800" />
+
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </NavLink>
 
             <button onClick={ToggleButton} className="text-2xl">
