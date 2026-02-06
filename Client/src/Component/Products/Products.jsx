@@ -62,6 +62,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/cartSlice'
 import Heading from '../../Reuse/Heading'
+import Hr from '../../../public/herbaltea.jpg'
+import oa from '../../../public/Ab.webp'
+import ab from '../../../public/ABooster.webp'
+import pp from '../../../public/pp.webp'
+import green from '../../../public/green.jpg'
+import HDC from '../../../public/HDC.jpg'
 
 const productsData = [
   {
@@ -70,14 +76,14 @@ const productsData = [
     description:
       'A natural blend of herbs to cleanse your body and refresh your mind.',
     price: 499,
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b',
+    image: Hr,
   },
   {
     id: 2,
     name: 'Organic Ashwagandha',
     description: 'Boost immunity, reduce stress, and improve overall wellness.',
     price: 699,
-    image: 'https://images.unsplash.com/photo-1615486363973-f79d8756c8b4',
+    image: oa,
   },
   {
     id: 3,
@@ -85,7 +91,7 @@ const productsData = [
     description:
       'Strengthen your immune system with time-tested ayurvedic herbs.',
     price: 899,
-    image: 'https://images.unsplash.com/photo-1590080877777-5d9f7cfa5c8c',
+    image: ab,
   },
   {
     id: 4,
@@ -93,7 +99,7 @@ const productsData = [
     description:
       'Plant-based protein to fuel your body and support muscle recovery.',
     price: 1299,
-    image: 'https://images.unsplash.com/photo-1627485937980-221c88ac04b3',
+    image: pp,
   },
   {
     id: 5,
@@ -101,14 +107,14 @@ const productsData = [
     description:
       'Packed with vitamins, minerals, and antioxidants for daily energy.',
     price: 999,
-    image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092',
+    image: green,
   },
   {
     id: 6,
     name: 'Herbal Digestive Capsules',
     description: 'Improve digestion and gut health naturally and effectively.',
     price: 599,
-    image: 'https://images.unsplash.com/photo-1580281658629-8a6d5b9c0f21',
+    image: HDC,
   },
 ]
 
