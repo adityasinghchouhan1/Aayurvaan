@@ -8,6 +8,7 @@ import ContectusData from '../components/ContectusData'
 import SidebarSub from '../components/SidebarSub'
 import ServicesCard from '../components/ServicesCard'
 import SliderUpload from '../components/SliderUpload'
+import AdminAddProduct from '../components/Products/AdminAddProduct'
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
           {
             path: 'SliderUpload',
             element: <SliderUpload />,
+          },
+          {
+            path: 'ProductUpload',
+            element: <AdminAddProduct />,
           },
         ],
       },
