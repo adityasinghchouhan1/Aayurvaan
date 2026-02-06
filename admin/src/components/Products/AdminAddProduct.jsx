@@ -44,14 +44,75 @@ export default function AdminAddProduct() {
   }
 
   return (
-    <form onSubmit={submit}>
-      <input name="name" onChange={handleChange} placeholder="Name" />
-      <textarea name="description" onChange={handleChange} />
-      <input name="mrp" onChange={handleChange} />
-      <input name="price" onChange={handleChange} />
-      <input name="discount" onChange={handleChange} />
-      <input type="file" name="images" multiple onChange={handleChange} />
-      <button>Add Product</button>
-    </form>
+    <div className=" p-8">
+      <h1 className="text-4xl font-bold text-center font-serif mb-10 text-indigo-700">
+        Upload Products
+      </h1>
+      <div className="bg-white shadow-md rounded-lg p-8  mx-auto mb-12">
+        <form onSubmit={submit}>
+          <label className="block mb-2 font-semibold text-gray-700">
+            Product Name
+          </label>
+          <input
+            name="name"
+            onChange={handleChange}
+            placeholder="Name"
+            className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
+          />
+          <label className="block mb-2 font-semibold text-gray-700">
+            Product description
+          </label>
+          <textarea
+            name="description"
+            onChange={handleChange}
+            className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
+          />
+          <div className="flex w-full gap-5">
+            <div>
+              <label className="block mb-2 font-semibold text-gray-700">
+                MRP
+              </label>
+              <input
+                name="mrp"
+                onChange={handleChange}
+                className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 font-semibold text-gray-700">
+                Price
+              </label>
+
+              <input
+                name="price"
+                onChange={handleChange}
+                className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
+              />
+            </div>
+          </div>
+          <label className="block mb-2 font-semibold text-gray-700">
+            Discount
+          </label>
+
+          <input
+            name="discount"
+            onChange={handleChange}
+            className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
+          />
+          <label className="block mb-2 font-semibold text-gray-700">
+            Product Images
+          </label>
+
+          <input
+            type="file"
+            name="images"
+            multiple
+            onChange={handleChange}
+            className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
+          />
+          <button>Add Product</button>
+        </form>
+      </div>
+    </div>
   )
 }
