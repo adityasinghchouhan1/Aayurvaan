@@ -7,7 +7,7 @@ const VisionMission = lazy(() => import('./VisionMission/VisionMission'))
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-white via-green-50 to-emerald-200">
+    <div className="bg-gradient-to-br from-white via-emerald-50 to-emerald-100">
       <Suspense fallback={<div className="p-10">Loading...</div>}>
         <Slide />
         <Welcome />
