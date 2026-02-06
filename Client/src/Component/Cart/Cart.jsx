@@ -21,32 +21,44 @@ const Cart = () => {
   return (
     <div className="mx-auto max-w-5xl px-6 py-20">
       {showToast && (
-        <div className="fixed top-6 right-6 z-50 rounded-xl bg-red-500 px-6 py-4 text-white shadow-lg transition-all">
-          ✅ Product remove from the cart
+        <div className="fixed top-6 right-6 z-50 rounded-xl bg-red-500 px-6 py-4 text-white shadow-lg">
+          ❌ Product removed from cart
         </div>
       )}
+
       <Heading
         title={'Your'}
         title_l={' Cart'}
-        discrption={'Your Happy Products....'}
+        discrption={'Your happy products 💚'}
       />
 
       {items.length === 0 ? (
-        <p className="text-center text-gray-500">Cart is empty 🛒</p>
+        <p className="text-center text-gray-500 mt-10">Cart is empty 🛒</p>
       ) : (
         <>
           {items.map((item) => (
             <div
               key={item.id}
-              className="mb-6 flex items-center justify-between rounded-xl bg-white p-5 shadow"
+              className="mb-6 flex flex-col sm:flex-row items-center gap-6 rounded-2xl bg-white p-5 shadow-md"
             >
-              <div>
-                <h3 className="font-semibold">{item.name}</h3>
+              {/* IMAGE */}
+              <img
+                src={item.image}
+                alt={item.name}
+                className="h-24 w-24 rounded-xl object-cover"
+              />
+
+              {/* INFO */}
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold">{item.name}</h3>
                 <p className="text-sm text-gray-600">Qty: {item.qty}</p>
               </div>
 
+              {/* PRICE + ACTION */}
               <div className="flex items-center gap-6">
-                <span className="font-bold">₹{item.price * item.qty}</span>
+                <span className="font-bold text-emerald-600">
+                  ₹{item.price * item.qty}
+                </span>
 
                 <button
                   onClick={() => {
@@ -62,12 +74,15 @@ const Cart = () => {
             </div>
           ))}
 
-          <div className="mt-10 flex items-center justify-between">
-            <h3 className="text-xl font-bold">Total: ₹{total}</h3>
+          {/* TOTAL + ORDER */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <h3 className="text-2xl font-bold text-gray-800">
+              Total: ₹{total}
+            </h3>
 
             <button
               onClick={handleOrder}
-              className="rounded-full bg-emerald-600 px-8 py-3 text-white hover:bg-emerald-700"
+              className="rounded-full bg-emerald-600 px-10 py-3 text-white text-lg hover:bg-emerald-700 transition"
             >
               Place Order
             </button>
