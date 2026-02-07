@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+import SummaryApi from '../../common/SummaryAPI'
 
 export default function AdminAddProduct() {
   const [form, setForm] = useState({
@@ -34,7 +35,7 @@ export default function AdminAddProduct() {
       }
     })
 
-    await axios.post('http://127.0.0.1:8000/api/products/create/', data, {
+    await axios.post(SummaryApi.Productupload.url, data, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('access')}`,
       },

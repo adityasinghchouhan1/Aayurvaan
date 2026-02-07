@@ -60,6 +60,12 @@ const SummaryApi = {
     url: `${backendDomain}/api/sliders`, // id will be appended
     method: 'put',
   },
+  // ====================== Products Uploads==================
+
+  Productupload: {
+    url: `${backendDomain}/api/products/create/`,
+    method: 'post',
+  },
 
   // Admin routes
   loginAdmin: {
