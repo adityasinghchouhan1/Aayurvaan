@@ -43,7 +43,7 @@ const ContectUs = () => {
       <Wrapper title={'Contect Us'} description={'Fasting'} image={Logo} />
       <Heading
         title={'Contact '}
-        title_l={'Us'}
+        title_l={'Us.'}
         discrption={'Fill out your query here and connect with us'}
         textcolor={'white'}
       />
