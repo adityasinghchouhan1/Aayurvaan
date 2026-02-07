@@ -6,5 +6,4 @@ from .views import (
 urlpatterns = [
   path('sliders/', SliderListCreateView.as_view()),
 path('sliders/<int:pk>/', SliderDetailView.as_view()),
-
 ]
