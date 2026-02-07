@@ -39,8 +39,8 @@ const ContectUs = () => {
   }
 
   return (
-    <div className="flex justify-center flex-col py-12 bg-gradient-to-br from-white via-green-50 to-emerald-200 ">
-      <Wrapper title={'Contect Us'} description={'Fasting'} image={Logo} />{' '}
+    <div className="flex justify-center flex-col pb-3 bg-gradient-to-br from-white via-green-50 to-emerald-200 ">
+      <Wrapper title={'Contect Us'} description={'Fasting'} image={Logo} />
       <Heading
         title={'Contact '}
         title_l={'Us'}
