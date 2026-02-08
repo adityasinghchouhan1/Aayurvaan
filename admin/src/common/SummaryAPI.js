@@ -70,6 +70,14 @@ const SummaryApi = {
     url: `${backendDomain}/api/products/`,
     method: 'get',
   },
+  Productdelete: {
+    url: `${backendDomain}/api/products/`,
+    method: 'delete',
+  },
+  Productupdate: {
+    url: `${backendDomain}/api/products/`,
+    method: 'put',
+  },
 
   // Admin routes
   loginAdmin: {

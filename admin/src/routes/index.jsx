@@ -9,6 +9,8 @@ import SidebarSub from '../components/SidebarSub'
 import ServicesCard from '../components/ServicesCard'
 import SliderUpload from '../components/SliderUpload'
 import AdminAddProduct from '../components/Products/AdminAddProduct'
+import ProductManagemnet from '../components/Products/ProductManagemnet'
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -45,6 +47,10 @@ export const router = createBrowserRouter([
           {
             path: 'ProductUpload',
             element: <AdminAddProduct />,
+          },
+          {
+            path: 'ProductManage',
+            element: <ProductManagemnet />,
           },
         ],
       },

@@ -14,10 +14,17 @@ export default function AdminAddProduct() {
 
   const handleChange = (e) => {
     const { name, value, files } = e.target
+
     if (name === 'images') {
-      setForm({ ...form, images: files })
+      setForm((prev) => ({
+        ...prev,
+        images: Array.from(files), // 👈 FIX
+      }))
     } else {
-      setForm({ ...form, [name]: value })
+      setForm((prev) => ({
+        ...prev,
+        [name]: value,
+      }))
     }
   }
 
@@ -25,19 +32,21 @@ export default function AdminAddProduct() {
     e.preventDefault()
 
     const data = new FormData()
-    Object.keys(form).forEach((key) => {
-      if (key === 'images') {
-        for (let img of form.images) {
-          data.append('images', img)
-        }
-      } else {
-        data.append(key, form[key])
-      }
+
+    data.append('name', form.name)
+    data.append('description', form.description)
+    data.append('mrp', form.mrp)
+    data.append('price', form.price)
+    data.append('discount', form.discount)
+
+    form.images.forEach((img) => {
+      data.append('images', img) // 👈 SAME KEY NAME
     })
 
     await axios.post(SummaryApi.Productupload.url, data, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('access')}`,
+        // ❌ DO NOT set Content-Type manually
       },
     })
 
@@ -111,6 +120,10 @@ export default function AdminAddProduct() {
             onChange={handleChange}
             className="mb-4 w-full rounded border border-gray-300 p-2 focus:outline-indigo-500"
           />
+          {form.images.map((img, i) => (
+            <img key={i} src={URL.createObjectURL(img)} className="h-20" />
+          ))}
+
           <button className="text-white p-3 font-serif font-semibold rounded bg-blue-500 active:scale-90 transition-all">
             Add Product
           </button>

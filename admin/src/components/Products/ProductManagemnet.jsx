@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react'
 import axios from '../../utils/adminAxios'
 import SummaryApi from '../../common/SummaryAPI'
 
-export default function AdminProducts() {
+export default function ProductManagemnet() {
   const [products, setProducts] = useState([])
   const [editProduct, setEditProduct] = useState(null)
 
   const fetchProducts = async () => {
     const res = await axios.get(SummaryApi.Productget.url)
     setProducts(res.data)
+    console.log(res.data)
   }
 
   useEffect(() => {
