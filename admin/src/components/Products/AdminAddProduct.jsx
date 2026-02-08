@@ -43,6 +43,7 @@ export default function AdminAddProduct() {
       data.append('images', img) // 👈 SAME KEY NAME
     })
 
+    console.log('p data', form)
     await axios.post(SummaryApi.Productupload.url, data, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('access')}`,

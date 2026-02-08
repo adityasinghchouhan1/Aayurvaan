@@ -26,7 +26,7 @@ adminAxios.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('accessToken')
-      window.location.href = '/admin/login'
+      window.location.href = '/'
     }
     return Promise.reject(error)
   },
