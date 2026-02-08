@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import axios from 'axios'
+import axios from '../../utils/adminAxios'
 import SummaryApi from '../../common/SummaryAPI'
 
 export default function AdminAddProduct() {
