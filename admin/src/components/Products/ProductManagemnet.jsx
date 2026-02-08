@@ -43,7 +43,7 @@ export default function ProductManagemnet() {
         {products.map((product) => (
           <div key={product.id} className="rounded-xl bg-white p-5 shadow-md">
             <img
-              src={product.images?.[0]}
+              src={product.images?.[0]?.image}
               className="h-40 w-full rounded-lg object-cover"
             />
 
