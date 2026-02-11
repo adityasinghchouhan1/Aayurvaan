@@ -58,74 +58,143 @@
 
 // export default Products
 
+// import React, { useEffect, useState } from 'react'
+// import { useDispatch } from 'react-redux'
+// import { addToCart } from '../../redux/cartSlice'
+// import Heading from '../../Reuse/Heading'
+// import Hr from '../../../public/herbaltea.jpg'
+// import oa from '../../../public/Ab.webp'
+// import ab from '../../../public/ABooster.webp'
+// import pp from '../../../public/pp.webp'
+// import green from '../../../public/green.jpg'
+// import HDC from '../../../public/HDC.jpg'
+
+// const productsData = [
+//   {
+//     id: 1,
+//     name: 'Herbal Detox Tea',
+//     description:
+//       'A natural blend of herbs to cleanse your body and refresh your mind.',
+//     price: 499,
+//     image: Hr,
+//   },
+//   {
+//     id: 2,
+//     name: 'Organic Ashwagandha',
+//     description: 'Boost immunity, reduce stress, and improve overall wellness.',
+//     price: 699,
+//     image: oa,
+//   },
+//   {
+//     id: 3,
+//     name: 'Ayurvedic Immunity Booster',
+//     description:
+//       'Strengthen your immune system with time-tested ayurvedic herbs.',
+//     price: 899,
+//     image: ab,
+//   },
+//   {
+//     id: 4,
+//     name: 'Natural Protein Powder',
+//     description:
+//       'Plant-based protein to fuel your body and support muscle recovery.',
+//     price: 1299,
+//     image: pp,
+//   },
+//   {
+//     id: 5,
+//     name: 'Green Superfood Mix',
+//     description:
+//       'Packed with vitamins, minerals, and antioxidants for daily energy.',
+//     price: 999,
+//     image: green,
+//   },
+//   {
+//     id: 6,
+//     name: 'Herbal Digestive Capsules',
+//     description: 'Improve digestion and gut health naturally and effectively.',
+//     price: 599,
+//     image: HDC,
+//   },
+// ]
+
+// const Products = () => {
+//   const [products, setProducts] = useState([])
+//   const [showToast, setShowToast] = useState(false)
+
+//   const dispatch = useDispatch()
+
+//   useEffect(() => {
+//     setProducts(productsData)
+//   }, [])
+
+//   return (
+//     <div className="mx-auto max-w-7xl px-6 py-20">
+//       {showToast && (
+//         <div className="fixed top-6 right-6 z-50 rounded-xl bg-emerald-600 px-6 py-4 text-white shadow-lg transition-all">
+//           ✅ Product added to cart
+//         </div>
+//       )}
+
+//       <Heading
+//         title={'Our '}
+//         title_l={'Products'}
+//         discrption={'Products that make everyone fit and mind free'}
+//       />
+
+//       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+//         {products.map((item) => (
+//           <div
+//             key={item.id}
+//             className="rounded-2xl bg-white shadow-lg p-6 transition hover:-translate-y-2"
+//           >
+//             <img
+//               src={item.image}
+//               className="h-48 w-full rounded-xl object-cover"
+//             />
+
+//             <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
+//             <p className="text-sm text-gray-600">{item.description}</p>
+
+//             <div className="mt-4 flex items-center justify-between">
+//               <span className="text-lg font-bold text-emerald-600">
+//                 ₹{item.price}
+//               </span>
+
+//               <button
+//                 onClick={() => {
+//                   dispatch(addToCart(item))
+//                   setShowToast(true)
+//                   setTimeout(() => setShowToast(false), 2000)
+//                 }}
+//                 className="rounded-full bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700"
+//               >
+//                 Add to Cart
+//               </button>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default Products
+
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/cartSlice'
+import axios from 'axios'
 import Heading from '../../Reuse/Heading'
-import Hr from '../../../public/herbaltea.jpg'
-import oa from '../../../public/Ab.webp'
-import ab from '../../../public/ABooster.webp'
-import pp from '../../../public/pp.webp'
-import green from '../../../public/green.jpg'
-import HDC from '../../../public/HDC.jpg'
-
-const productsData = [
-  {
-    id: 1,
-    name: 'Herbal Detox Tea',
-    description:
-      'A natural blend of herbs to cleanse your body and refresh your mind.',
-    price: 499,
-    image: Hr,
-  },
-  {
-    id: 2,
-    name: 'Organic Ashwagandha',
-    description: 'Boost immunity, reduce stress, and improve overall wellness.',
-    price: 699,
-    image: oa,
-  },
-  {
-    id: 3,
-    name: 'Ayurvedic Immunity Booster',
-    description:
-      'Strengthen your immune system with time-tested ayurvedic herbs.',
-    price: 899,
-    image: ab,
-  },
-  {
-    id: 4,
-    name: 'Natural Protein Powder',
-    description:
-      'Plant-based protein to fuel your body and support muscle recovery.',
-    price: 1299,
-    image: pp,
-  },
-  {
-    id: 5,
-    name: 'Green Superfood Mix',
-    description:
-      'Packed with vitamins, minerals, and antioxidants for daily energy.',
-    price: 999,
-    image: green,
-  },
-  {
-    id: 6,
-    name: 'Herbal Digestive Capsules',
-    description: 'Improve digestion and gut health naturally and effectively.',
-    price: 599,
-    image: HDC,
-  },
-]
+import SummaryApi from '../../common/SummaryApi'
 
 const Products = () => {
   const [products, setProducts] = useState([])
   const [showToast, setShowToast] = useState(false)
 
   const dispatch = useDispatch()
-
   useEffect(() => {
-    setProducts(productsData)
+    axios.get(SummaryApi.Productget.url).then((res) => setProducts(res.data))
   }, [])
 
   return (
@@ -149,7 +218,7 @@ const Products = () => {
             className="rounded-2xl bg-white shadow-lg p-6 transition hover:-translate-y-2"
           >
             <img
-              src={item.image}
+              src={item.images?.[0]?.image}
               className="h-48 w-full rounded-xl object-cover"
             />
 

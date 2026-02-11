@@ -14,8 +14,14 @@ const SummaryApi = {
     url: `${backendDomain}/api/sliders`,
     method: 'get',
   },
+  // ==-------------- Therapy
   Therapydataget: {
     url: `${backendDomain}/api/therapy`,
+    method: 'get',
+  },
+  // -------------Product
+  Productget: {
+    url: `${backendDomain}/api/products/`,
     method: 'get',
   },
 }
