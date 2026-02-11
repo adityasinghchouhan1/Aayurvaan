@@ -215,31 +215,44 @@ const Products = () => {
         {products.map((item) => (
           <div
             key={item.id}
-            className="rounded-2xl bg-white shadow-lg p-6 transition hover:-translate-y-2"
+            className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition hover:-translate-y-2"
           >
-            <img
-              src={item.images?.[0]?.image}
-              className="h-48 w-full rounded-xl object-cover"
-            />
+            {/* Image */}
+            <div className="h-48 w-full overflow-hidden ">
+              <img
+                src={item.images?.[0]?.image}
+                alt={item.name}
+                className="h-full w-full object-contain"
+              />
+            </div>
 
-            <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
-            <p className="text-sm text-gray-600">{item.description}</p>
+            {/* Content */}
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold line-clamp-1">
+                {item.name}
+              </h3>
 
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-lg font-bold text-emerald-600">
-                ₹{item.price}
-              </span>
+              <p className="mt-2 text-sm text-gray-600 line-clamp-3">
+                {item.description}
+              </p>
 
-              <button
-                onClick={() => {
-                  dispatch(addToCart(item))
-                  setShowToast(true)
-                  setTimeout(() => setShowToast(false), 2000)
-                }}
-                className="rounded-full bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700"
-              >
-                Add to Cart
-              </button>
+              {/* Bottom Section */}
+              <div className="mt-auto flex items-center justify-between pt-4">
+                <span className="text-lg font-bold text-emerald-600">
+                  ₹{item.price}
+                </span>
+
+                <button
+                  onClick={() => {
+                    dispatch(addToCart(item))
+                    setShowToast(true)
+                    setTimeout(() => setShowToast(false), 2000)
+                  }}
+                  className="rounded-full bg-emerald-600 px-5 py-2 text-white hover:bg-emerald-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         ))}
