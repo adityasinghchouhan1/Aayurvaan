@@ -64,7 +64,7 @@ const Cart = () => {
               className="mb-6 flex flex-col sm:flex-row items-center gap-6 rounded-2xl bg-white p-5 shadow-md"
             >
               <img
-                src={item.image}
+                src={item.images?.[0]?.image}
                 className="h-24 w-24 rounded-xl object-cover"
               />
 
