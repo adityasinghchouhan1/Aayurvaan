@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db import transaction
+from rest_framework.generics import ListAPIView
+from .serializers import OrderSerializer
 
 from .models import Order,OrderItem
 from product.models import Product
@@ -55,3 +57,10 @@ class CreateOrderAPIView(APIView):
         "Order_id":order.id,
         "total_amount":total_amount
       })
+    
+class UserOrderListAPIView(ListAPIView):
+  serializer_class=OrderSerializer
+  permission_classes=[IsAuthenticated]
+
+  def get_queryset(self):
+    return Order.objects.filter(user=self.request.user)    
