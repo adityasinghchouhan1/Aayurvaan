@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axiosInstance from '../../common/axiosInstance'
 import { useNavigate } from 'react-router-dom'
+import Heading from '../../Reuse/Heading'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -24,12 +25,9 @@ const Login = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-emerald-50">
+    <div className="min-h-screen flex-col flex items-center justify-center bg-emerald-50">
+      <Heading title={'Welcome'} title_l={' Back'} discrption={''} />
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-2xl font-bold text-emerald-600 mb-6">
-          Welcome Back
-        </h2>
-
         <input
           type="text"
           placeholder="Username"

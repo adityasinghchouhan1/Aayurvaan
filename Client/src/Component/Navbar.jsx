@@ -8,6 +8,7 @@ import { FaUser, FaSignInAlt, FaUserPlus } from 'react-icons/fa'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const cartItems = useSelector((state) => state.cart.items)
+  const user = useSelector((state) => state.auth?.user)
 
   const ToggleButton = () => setIsOpen(!isOpen)
   const CloseButton = () => setIsOpen(false)
@@ -49,21 +50,21 @@ const Navbar = () => {
 
             {/* AUTH LINKS */}
             <div className="flex items-center gap-6">
-              <NavLink
-                to="/login"
-                className="flex items-center gap-2 hover:text-green-600"
-              >
-                <FaSignInAlt />
-                Login
-              </NavLink>
+              {user ? (
+                <NavLink to="/profile">
+                  <FaUser className="text-xl text-green-800" />
+                </NavLink>
+              ) : (
+                <>
+                  <NavLink to="/login">
+                    <FaSignInAlt className="text-xl text-green-800" />
+                  </NavLink>
 
-              <NavLink
-                to="/register"
-                className="flex items-center gap-2 hover:text-green-600"
-              >
-                <FaUserPlus />
-                Register
-              </NavLink>
+                  <NavLink to="/register">
+                    <FaUserPlus className="text-xl text-green-800" />
+                  </NavLink>
+                </>
+              )}
             </div>
 
             {/* CART ICON */}
@@ -82,13 +83,21 @@ const Navbar = () => {
 
           {/* MOBILE ICONS */}
           <div className="flex items-center gap-4 md:hidden">
-            <NavLink to="/login">
-              <FaSignInAlt className="text-xl text-green-800" />
-            </NavLink>
+            {user ? (
+              <NavLink to="/profile">
+                <FaUser className="text-xl text-green-800" />
+              </NavLink>
+            ) : (
+              <>
+                <NavLink to="/login">
+                  <FaSignInAlt className="text-xl text-green-800" />
+                </NavLink>
 
-            <NavLink to="/register">
-              <FaUserPlus className="text-xl text-green-800" />
-            </NavLink>
+                <NavLink to="/register">
+                  <FaUserPlus className="text-xl text-green-800" />
+                </NavLink>
+              </>
+            )}
 
             <NavLink to="/cart" className="relative"></NavLink>
 
