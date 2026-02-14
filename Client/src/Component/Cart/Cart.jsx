@@ -28,9 +28,12 @@ const Cart = () => {
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0)
 
   const handleOrder = async () => {
-    // const token = localStorage.getItem('token')
+    const token = localStorage.getItem('access')
     // console.log('TOKEN:', token)
-
+    if (!token) {
+      alert('Please login to place order')
+      return
+    }
     await axiosInstance.post('orders/create/', {
       full_name: formData.name,
       address: formData.address,
