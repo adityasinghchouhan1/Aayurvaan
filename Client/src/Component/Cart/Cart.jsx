@@ -8,6 +8,7 @@ import {
   increaseQty,
   decreaseQty,
 } from '../../redux/cartSlice'
+import axiosInstance from '../../common/axiosInstance'
 
 const Cart = () => {
   const [showToast, setShowToast] = useState(false)
@@ -27,13 +28,20 @@ const Cart = () => {
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0)
 
   const handleOrder = async () => {
-    const orderPayload = {
-      customer: formData,
-      items,
-      total,
-    }
+    // const token = localStorage.getItem('token')
+    // console.log('TOKEN:', token)
 
-    await placeOrder(orderPayload)
+    await axiosInstance.post('orders/create/', {
+      full_name: formData.name,
+      address: formData.address,
+      pincode: formData.pincode,
+      contact_number: formData.phone,
+      payment_method: formData.payment,
+      items: items.map((item) => ({
+        product_id: item.id,
+        quantity: item.qty,
+      })),
+    })
 
     dispatch(clearCart())
     setOpenCheckout(false)
