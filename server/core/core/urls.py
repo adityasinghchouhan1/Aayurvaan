@@ -25,7 +25,8 @@ urlpatterns = [
     path('api/accounts/',include('accounts.urls')),
     path('api/', include('slider.urls')),
     path('api/',include('therapy.urls')),
-    path('api/',include('product.urls'))
+    path('api/',include('product.urls')),
+    path('api/',include('order.urls'))
 
 ]
 
