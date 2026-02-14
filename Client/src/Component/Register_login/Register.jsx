@@ -15,7 +15,7 @@ const Register = () => {
     try {
       const res = await axiosInstance.post('register/', form)
 
-      localStorage.setItem('token', res.data.access)
+      localStorage.setItem('access', res.data.access)
 
       alert('Registered Successfully 🎉')
       navigate('/')

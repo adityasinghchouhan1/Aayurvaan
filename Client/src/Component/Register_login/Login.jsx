@@ -14,7 +14,7 @@ const Login = () => {
     try {
       const res = await axiosInstance.post('login/', form)
 
-      localStorage.setItem('token', res.data.access)
+      localStorage.setItem('access', res.data.access)
 
       alert('Login Successful 🎉')
       navigate('/')

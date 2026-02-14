@@ -12,6 +12,10 @@ const Fastingtherapy = lazy(
 )
 const Cart = lazy(() => import('../Component/Cart/Cart'))
 const Products = lazy(() => import('../Component/Products/Products.jsx'))
+
+const Login = lazy(() => import('../Component/Register_login/Login.jsx'))
+const Register = lazy(() => import('../Component/Register_login/Register.jsx'))
+
 // Loader UI
 const Loader = () => (
   <div className="flex flex-col justify-center items-center h-[60vh]">
@@ -84,6 +88,22 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <Products />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'Login',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Login />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'Register',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Register />
           </Suspense>
         ),
       },
