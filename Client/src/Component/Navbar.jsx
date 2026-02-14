@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa'
 import logo from '../../public/logo-img.png'
 import { useSelector } from 'react-redux'
+import { FaUser, FaSignInAlt, FaUserPlus } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -46,6 +47,25 @@ const Navbar = () => {
               </li>
             ))}
 
+            {/* AUTH LINKS */}
+            <div className="flex items-center gap-6">
+              <NavLink
+                to="/login"
+                className="flex items-center gap-2 hover:text-green-600"
+              >
+                <FaSignInAlt />
+                Login
+              </NavLink>
+
+              <NavLink
+                to="/register"
+                className="flex items-center gap-2 hover:text-green-600"
+              >
+                <FaUserPlus />
+                Register
+              </NavLink>
+            </div>
+
             {/* CART ICON */}
             <NavLink
               to="/Cart"
@@ -62,6 +82,16 @@ const Navbar = () => {
 
           {/* MOBILE ICONS */}
           <div className="flex items-center gap-4 md:hidden">
+            <NavLink to="/login">
+              <FaSignInAlt className="text-xl text-green-800" />
+            </NavLink>
+
+            <NavLink to="/register">
+              <FaUserPlus className="text-xl text-green-800" />
+            </NavLink>
+
+            <NavLink to="/cart" className="relative"></NavLink>
+
             <NavLink to="/cart" className="relative">
               <FaShoppingCart className="text-2xl text-green-800" />
 
