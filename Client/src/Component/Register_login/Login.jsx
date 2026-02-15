@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
 import axiosInstance from '../../common/axiosInstance'
 import { useNavigate } from 'react-router-dom'
 import Heading from '../../Reuse/Heading'
+import { loginSuccess } from '../../redux/authSlice'
 
 const Login = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const [form, setForm] = useState({
     username: '',
@@ -16,6 +20,13 @@ const Login = () => {
       const res = await axiosInstance.post('login/', form)
 
       localStorage.setItem('access', res.data.access)
+
+      dispatch(
+        loginSuccess({
+          user: { username: form.username }, // temporary user info
+          token: res.data.access, // FIXED
+        }),
+      )
 
       alert('Login Successful 🎉')
       navigate('/')
