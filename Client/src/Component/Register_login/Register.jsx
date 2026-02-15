@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axiosInstance from '../../common/axiosInstance'
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Heading from '../../Reuse/Heading'
 
@@ -14,7 +14,7 @@ const Register = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axiosInstance.post('register/', form)
+      const res = await axios.post('register/', form)
 
       localStorage.setItem('access', res.data.access)
 
