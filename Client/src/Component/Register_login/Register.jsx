@@ -14,9 +14,13 @@ const Register = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post('register/', form)
+      const res = await axios.post(
+        `${import.meta.env.VITE_SERVER_URL}register/`,
+        form,
+      )
 
       localStorage.setItem('access', res.data.access)
+      localStorage.setItem('refresh', res.data.refresh)
 
       alert('Registered Successfully 🎉')
       navigate('/')
