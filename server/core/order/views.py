@@ -64,3 +64,13 @@ class UserOrderListAPIView(ListAPIView):
 
   def get_queryset(self):
     return Order.objects.filter(user=self.request.user)    
+  
+
+class AdminOrderListAPIView(ListAPIView):
+    serializer_class = OrderSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        if self.request.user.is_staff:
+            return Order.objects.all().order_by('-id')
+        return Order.objects.none()
