@@ -20,6 +20,11 @@ const SummaryApi = {
     url: `${backendDomain}/api/events`,
     method: 'get',
   },
+  // ------------------Oder
+  order: {
+    url: `${backendDomain}/api/orders`,
+    method: 'get',
+  },
 
   //------------------- For UploadTherapy
 

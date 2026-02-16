@@ -44,6 +44,20 @@ const Sidebar = () => {
 
         <nav className="mt-8">
           <Link
+            to="dashboardCards"
+            className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
+          >
+            <TbLayoutDashboardFilled className="mr-2" size={20} />
+            {!isCollapsed && <span>Dashboard</span>}
+          </Link>
+          <Link
+            to="order"
+            className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
+          >
+            <TbLayoutDashboardFilled className="mr-2" size={20} />
+            {!isCollapsed && <span>Order</span>}
+          </Link>
+          <Link
             to="ProductUpload"
             className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
           >
@@ -56,13 +70,6 @@ const Sidebar = () => {
           >
             <TbLayoutDashboardFilled className="mr-2" size={20} />
             {!isCollapsed && <span>Product Managemant</span>}
-          </Link>
-          <Link
-            to="dashboardCards"
-            className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
-          >
-            <TbLayoutDashboardFilled className="mr-2" size={20} />
-            {!isCollapsed && <span>Dashboard</span>}
           </Link>
           <Link
             to="contect"
