@@ -32,13 +32,13 @@ const AdminOrders = () => {
 
       {orders.length === 0 && <p className="text-gray-500">No Orders Found</p>}
 
-      <div className="space-y-6">
+      <div className="space-y-3">
         {orders.map((order) => (
           <div
             key={order.id}
-            className="bg-white shadow-lg rounded-xl p-6 border"
+            className="bg-white shadow-lg rounded-xl p-4 border"
           >
-            <div className="flex justify-between mb-4">
+            <div className="flex justify-between mb-2">
               <div>
                 <h2 className="text-lg font-semibold">Order ID: #{order.id}</h2>
                 <p>User: {order.user}</p>
@@ -52,7 +52,7 @@ const AdminOrders = () => {
               </div>
             </div>
 
-            <div className="border-t pt-4">
+            <div className="border-t pt-3">
               <h3 className="font-semibold mb-2">Shipping Details:</h3>
               <p>{order.full_name}</p>
               <p>{order.address}</p>
@@ -60,7 +60,7 @@ const AdminOrders = () => {
               <p>Contact: {order.contact_number}</p>
             </div>
 
-            <div className="border-t mt-4 pt-4">
+            <div className="border-t mt-2 pt-3">
               <h3 className="font-semibold mb-2">Ordered Items:</h3>
 
               {order.items.map((item) => (
