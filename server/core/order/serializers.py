@@ -8,13 +8,11 @@ class OrderItemSerializer(serializers.ModelSerializer):
         model = OrderItem
         fields = ['id', 'product_name', 'quantity', 'price']
 
-
 class OrderSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(
-        source='orderitem_set',
-        many=True,
-        read_only=True
-    )
+    many=True,
+    read_only=True
+)
     user = serializers.CharField(source='user.username')
 
     class Meta:
