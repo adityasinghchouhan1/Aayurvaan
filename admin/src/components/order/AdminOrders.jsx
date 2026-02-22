@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import adminAxios from '../../utils/adminAxios'
 import SummaryAPI from '../../common/SummaryAPI'
 
@@ -10,6 +10,7 @@ const AdminOrders = () => {
     try {
       const res = await adminAxios.get(SummaryAPI.order.url)
       setOrders(res.data)
+      console.log(res.data)
       setLoading(false)
     } catch (err) {
       console.error(err)

@@ -41,6 +41,7 @@ const Cart = () => {
       contact_number: formData.phone,
       payment_method: formData.payment,
       items: items.map((item) => ({
+        
         product_id: item.id,
         quantity: item.qty,
       })),
