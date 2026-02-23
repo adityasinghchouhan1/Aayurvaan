@@ -15,20 +15,42 @@ const Login = () => {
     password: '',
   })
 
+  // const handleSubmit = async () => {
+  //   try {
+  //     const res = await axiosInstance.post('login/', form)
+
+  //     localStorage.setItem('access', res.data.access)
+
+  //     dispatch(
+  //       loginSuccess({
+  //         user: { username: form.username }, // temporary user info
+  //         token: res.data.access, // FIXED
+  //       }),
+  //     )
+
+  //     alert('Login Successful 🎉')
+  //     navigate('/')
+  //   } catch (err) {
+  //     alert(err.response?.data?.error || 'Invalid credentials')
+  //   }
+  // }
+
   const handleSubmit = async () => {
     try {
       const res = await axiosInstance.post('login/', form)
 
       localStorage.setItem('access', res.data.access)
 
+      const userRes = await axiosInstance.get('me/')
+
       dispatch(
         loginSuccess({
-          user: { username: form.username }, // temporary user info
-          token: res.data.access, // FIXED
+          user: userRes.data,
+          token: res.data.access,
         }),
       )
-
       alert('Login Successful 🎉')
+
       navigate('/')
     } catch (err) {
       alert(err.response?.data?.error || 'Invalid credentials')
