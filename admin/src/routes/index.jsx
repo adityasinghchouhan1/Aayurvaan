@@ -11,6 +11,7 @@ import SliderUpload from '../components/SliderUpload'
 import AdminAddProduct from '../components/Products/AdminAddProduct'
 import ProductManagemnet from '../components/Products/ProductManagemnet'
 import AdminOrders from '../components/order/AdminOrders'
+import User from '../components/registerUser/User'
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
           {
             path: 'order',
             element: <AdminOrders />,
+          },
+          {
+            path: 'registered-users',
+            element: <User />,
           },
         ],
       },

@@ -51,6 +51,13 @@ const Sidebar = () => {
             {!isCollapsed && <span>Dashboard</span>}
           </Link>
           <Link
+            to="registered-users"
+            className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
+          >
+            <TbLayoutDashboardFilled className="mr-2" size={20} />
+            {!isCollapsed && <span>Registered Users</span>}
+          </Link>
+          <Link
             to="order"
             className="flex items-center px-4 py-3 hover:bg-teal-500 hover:text-white rounded-lg transition-colors duration-300"
           >

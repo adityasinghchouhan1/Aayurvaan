@@ -79,6 +79,12 @@ const SummaryApi = {
     url: `${backendDomain}/api/products/`,
     method: 'delete',
   },
+  //=======register user client side
+
+  registerUser: {
+    url: `${backendDomain}/api/admin/users/`,
+    method: 'get',
+  },
 
   // Admin routes
   loginAdmin: {
