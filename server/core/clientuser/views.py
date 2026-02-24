@@ -1,10 +1,14 @@
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAdminUser
+
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
+
+from server.core.clientuser.serializers import UserSerializer
 
 
 class RegisterAPIView(APIView):
@@ -66,3 +70,12 @@ class MeAPIView(APIView):
             "email": user.email,
             "is_staff": user.is_staff,
         })
+    
+    
+class AdminUserListAPIView(APIView):
+    permission_classes = [IsAdminUser]  # Only admin can access
+
+    def get(self, request):
+        users = User.objects.all().order_by("-date_joined")
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
