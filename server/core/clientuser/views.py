@@ -8,7 +8,7 @@ from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 
-from server.core.clientuser.serializers import UserSerializer
+from .serializers import UserSerializer
 
 
 class RegisterAPIView(APIView):
