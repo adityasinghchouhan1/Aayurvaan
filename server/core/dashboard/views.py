@@ -20,8 +20,8 @@ class DashboardStatsAPIView(APIView):
             "active_products": Product.objects.filter(is_active=True).count(),
             "deactive_products": Product.objects.filter(is_active=False).count(),
 
-            "total_queries": Contect.objects.count(),
-            "pending_queries": Contect.objects.filter(status="pending").count(),
+            "total_queries": Contact.objects.count(),
+            "pending_queries": Contact.objects.filter(status="pending").count(),
         }
 
         return Response(data)
