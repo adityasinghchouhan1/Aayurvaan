@@ -60,9 +60,10 @@ export default function ProductManagemnet() {
             />
 
             <h3 className="mt-3 text-lg font-semibold">
-              {product.name}{' '}
+              {product.name}
+              {''}
               <span
-                className={`inline-block my-2 px-3  text-xs rounded-full ${
+                className={`inline-block my-2 px-3 ms-1 text-xs rounded-full ${
                   product.is_active
                     ? 'bg-green-100 text-green-600'
                     : 'bg-red-100 text-red-600'
