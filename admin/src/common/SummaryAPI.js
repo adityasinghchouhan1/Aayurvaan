@@ -85,6 +85,12 @@ const SummaryApi = {
     url: `${backendDomain}/api/admin/users/`,
     method: 'get',
   },
+  // ==================== Dashboard Stats =========================
+
+  dashboardStats: {
+    url: `${backendDomain}/api/dashboard-stats/`,
+    method: 'get',
+  },
 
   // Admin routes
   loginAdmin: {
