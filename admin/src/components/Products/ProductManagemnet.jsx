@@ -32,6 +32,18 @@ export default function ProductManagemnet() {
     fetchProducts()
   }
 
+  const toggleProductStatus = async (product) => {
+    try {
+      await axios.patch(`${SummaryApi.Productdelete.url}${product.id}/`, {
+        is_active: !product.is_active,
+      })
+
+      fetchProducts()
+    } catch (error) {
+      console.error('Failed to update status', error)
+    }
+  }
+
   return (
     <div className="p-8">
       <h1 className="mb-10 text-center text-4xl font-bold text-indigo-700">
@@ -47,7 +59,19 @@ export default function ProductManagemnet() {
               className="h-40 w-full rounded-lg object-cover"
             />
 
-            <h3 className="mt-3 text-lg font-semibold">{product.name}</h3>
+            <h3 className="mt-3 text-lg font-semibold">
+              {product.name}{' '}
+              <span
+                className={`inline-block my-2 px-3  text-xs rounded-full ${
+                  product.is_active
+                    ? 'bg-green-100 text-green-600'
+                    : 'bg-red-100 text-red-600'
+                }`}
+              >
+                {product.is_active ? 'Active' : 'Inactive'}
+              </span>
+            </h3>
+
             <p className="text-sm text-gray-600 line-clamp-2">
               {product.description}
             </p>
@@ -57,7 +81,7 @@ export default function ProductManagemnet() {
               <span className="text-emerald-600">₹{product.price}</span>
             </div>
 
-            <div className="mt-4 flex justify-between">
+            <div className="mt-4 flex flex-wrap gap-2 justify-between">
               <button
                 onClick={() => setEditProduct(product)}
                 className="rounded bg-yellow-400 px-4 py-2 text-white"
@@ -70,6 +94,15 @@ export default function ProductManagemnet() {
                 className="rounded bg-red-500 px-4 py-2 text-white"
               >
                 Delete
+              </button>
+
+              <button
+                onClick={() => toggleProductStatus(product)}
+                className={`rounded px-4 py-2 text-white ${
+                  product.is_active ? 'bg-gray-600' : 'bg-green-600'
+                }`}
+              >
+                {product.is_active ? 'Deactivate' : 'Activate'}
               </button>
             </div>
           </div>
